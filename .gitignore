@@ -1,0 +1,19 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+vendor/
+.bundle/
+.DS_Store
+
+# Materiale riservato: non deve mai finire online
+_private/
+_bozze/
+
+# Anteprime e screenshot di lavoro
+Claude outputs/
+
+# Codice del gestionale (vive in Apps Script) e note di lavoro
+_google-script/
+GUIDA.md
+FOTO-DA-FARE.md

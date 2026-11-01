@@ -1,0 +1,43 @@
+<div class="topbar">
+    Apertura {{ site.data.profiles.apertura | downcase }} · {{ site.data.profiles.indirizzo.via }}, {{ site.data.profiles.indirizzo.citta }} · <a href="{{ '/prenota/' | relative_url }}">Prenota la consulenza</a>
+</div>
+
+<header id="site-header" class="site-header">
+    <nav class="nav container" aria-label="Navigazione principale">
+
+        <a class="logo" href="{{ '/' | relative_url }}" aria-label="{{ site.data.profiles.brand }} — torna alla home">
+            {% include sprig.html %}
+            <span class="logo-text">
+                <img class="logo-word" src="{{ '/assets/images/wordmark-bordeaux.svg' | relative_url }}" alt="{{ site.data.profiles.brand }}" width="158" height="56" style="width:158px;max-width:40vw;height:auto">
+                <span class="logo-sub">{{ site.data.profiles.payoff }}</span>
+            </span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-navigation"
+            aria-label="Apri il menu"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul id="site-navigation" class="nav-links">
+            {% for item in site.data.navigation %}
+                <li>
+                    <a
+                        href="{{ item.url | relative_url }}"
+                        {% if page.url == item.url %}aria-current="page"{% endif %}
+                    >{{ item.title }}</a>
+                </li>
+            {% endfor %}
+            <li class="nav-cta">
+                <a class="button button-small" href="{{ '/prenota/' | relative_url }}">Prenota</a>
+            </li>
+        </ul>
+
+    </nav>
+</header>

@@ -1,0 +1,213 @@
+---
+layout: default
+permalink: /filosofia/
+title: "Filosofia"
+description: "Il rituale è il centro: ritagliarsi del tempo, tornare in contatto con sé e portare fuori quello che si è ritrovato. La filosofia di Filosophia, beauty boutique a Rovereto."
+---
+
+<section class="page-hero">
+    <div class="container page-hero-grid">
+        <div class="page-hero-inner reveal">
+            <p class="eyebrow">Il pensiero</p>
+            <h1 class="serif">Il rituale<br>è il centro.</h1>
+            <p class="lede">Non una consulenza. Un tempo che ti ritagli, in cui torni in contatto con te — e da lì riparti.</p>
+        </div>
+        <div class="page-hero-media reveal">
+            <img src="{{ '/assets/images/poltrone.jpg' | relative_url }}?v=2" alt="Due poltrone in bouclé, la lampada in ottone e una candela accesa davanti alla parete bordeaux: l'angolo dell'attesa"
+                 width="700" height="560" loading="eager" decoding="async" style="object-position: 50% 50%">
+        </div>
+    </div>
+    <div class="thread-rule" aria-hidden="true"></div>
+</section>
+
+
+<section class="section" id="nome">
+    <div class="container">
+        <div class="name-grid">
+
+            <div class="name-intro reveal">
+                <p class="eyebrow">Il nome</p>
+                <h2 class="serif">Filo<span class="name-dot" aria-hidden="true">·</span>Sophia</h2>
+                <p>Due parole in una. Insieme suonano come <em>filosofia</em>: un modo di
+                pensare la bellezza, prima ancora che un posto dove comprarla.</p>
+            </div>
+
+            <dl class="name-defs">
+                <div class="name-def reveal">
+                    <dt class="serif">Filo</dt>
+                    <dd>
+                        <p>Viene da <strong>Filomena</strong>, che ha fondato Filosophia e che la
+                        porta avanti ogni giorno, in cabina e al banco.</p>
+                        <p>Ed è il <strong>filo</strong> che lega un appuntamento al successivo.
+                        Una seduta da sola è un punto; tante sedute, ricordate e collegate,
+                        diventano una trama. La cura si costruisce così, nel tempo.</p>
+                    </dd>
+                </div>
+                <div class="name-def reveal">
+                    <dt class="serif">Sophia</dt>
+                    <dd>
+                        <p>In greco, <em>sophía</em> è la sapienza. Qui è il sapere che serve a
+                        <strong>leggere una pelle</strong> prima di toccarla, e a scegliere con
+                        misura che cosa le serve davvero.</p>
+                        <p>Prima la conoscenza, poi il gesto, poi, solo se serve, il prodotto.</p>
+                    </dd>
+                </div>
+            </dl>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="section section-alt" id="rametto">
+    <div class="container">
+        <div class="symbol-grid">
+
+            <figure class="symbol-art reveal">
+                <div class="symbol-plate">
+                    <img src="{{ '/assets/images/rametto-originale.png' | relative_url }}"
+                         alt="Il rametto, simbolo di Filosophia" width="385" height="614" loading="lazy" decoding="async">
+                    <svg class="symbol-marks" viewBox="0 0 385 614" aria-hidden="true">
+                        <g class="mk">
+                            <line x1="176" y1="592" x2="309" y2="592"/>
+                            <circle class="pt" cx="174" cy="592" r="5"/>
+                            <circle class="num" cx="336" cy="592" r="27"/>
+                            <text x="336" y="592">1</text>
+                        </g>
+                        <g class="mk">
+                            <line x1="172" y1="34" x2="309" y2="34"/>
+                            <circle class="pt" cx="169" cy="34" r="5"/>
+                            <circle class="num" cx="336" cy="34" r="27"/>
+                            <text x="336" y="34">2</text>
+                        </g>
+                        <g class="mk">
+                            <line x1="56" y1="196" x2="-53" y2="196"/>
+                            <circle class="pt" cx="58" cy="196" r="5"/>
+                            <circle class="num" cx="-80" cy="196" r="27"/>
+                            <text x="-80" y="196">3</text>
+                        </g>
+                    </svg>
+                </div>
+                <figcaption>Il rametto di Filosophia</figcaption>
+            </figure>
+
+            <div class="symbol-text">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Il simbolo</p>
+                    <h2 class="serif">Una pianta<br>che cresce piano.</h2>
+                    <p>Il segno di Filosophia è un rametto: niente fiori, niente frutti già pronti.
+                    Una pianta giovane, che diventa forte con il tempo e con la cura.
+                    Ogni sua parte racconta un pezzo del percorso.</p>
+                </div>
+
+                <ol class="symbol-list">
+                    <li class="reveal">
+                        <h3 class="serif">La radice</h3>
+                        <p>Il punto da cui parte tutto: l'ascolto e l'analisi della pelle. Senza una
+                        radice, niente cresce nella direzione giusta.</p>
+                    </li>
+                    <li class="reveal">
+                        <h3 class="serif">Il filo</h3>
+                        <p>La linea dritta che sale oltre le foglie: la costanza. Il rituale continua
+                        anche dopo la seduta, a casa, giorno dopo giorno.</p>
+                    </li>
+                    <li class="reveal">
+                        <h3 class="serif">Le foglie</h3>
+                        <p>Due foglie che si aprono: quello che la cura fa crescere. Fuori, sulla
+                        pelle. E dentro, nel modo in cui ti senti.</p>
+                    </li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="section" id="arco">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <p class="eyebrow">Cosa succede davvero</p>
+            <h2 class="serif">Si comincia da dentro.<br>Si finisce fuori.</h2>
+            <p>La pelle è il punto di ingresso, non quello di arrivo.</p>
+        </div>
+
+        <div class="journey">
+            {% for step in site.data.arco %}
+            <article class="journey-step reveal">
+                <span class="journey-num serif">{{ step.numero }}</span>
+                <div>
+                    <h3 class="serif">{{ step.titolo }}</h3>
+                    <p>{{ step.testo }}</p>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section quote-filomena" id="parole-filomena">
+    <div class="container">
+        <figure class="qf reveal">
+            {% include sprig.html %}
+            <p class="eyebrow">Le parole di Filomena</p>
+            <blockquote class="serif">
+                <p>In tutte le mie esperienze lavorative ho capito una cosa: la bellezza non è
+                mai solo estetica. È un concerto complesso, fatto di emozioni, consapevolezza,
+                autenticità.</p>
+                <p>[…] La bellezza vera parte da dentro. È uno stato d'animo.</p>
+            </blockquote>
+            <p class="qf-more">Il suo sogno: un luogo in cui ogni persona possa sentirsi
+            <em>ascoltata, vista, accolta</em>. Dove si sceglie «non per inseguire l'ultimo
+            trend, non per acquistare d'impulso, ma per scegliere con consapevolezza».</p>
+            <figcaption>
+                <span class="qf-name serif">Filomena Mazzarella</span>
+                <span class="qf-role">Fondatrice di Filosophia</span>
+            </figcaption>
+        </figure>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <div class="prose reveal">
+
+            <p class="eyebrow" style="margin-bottom:.8rem">La differenza</p>
+            <h2 class="serif" style="margin-top:0">Perché si chiama rituale.</h2>
+
+            <p>Una consulenza risponde a una domanda e finisce. Un rituale
+            <strong>ha una forma, si ripete e col tempo diventa tuo.</strong></p>
+
+            <blockquote>Il settore parte dal difetto da correggere.<br>Filosophia parte da come ti senti.</blockquote>
+
+            <p>È la differenza fra farsi dire quale crema prendere e imparare un gesto
+            che ti appartiene. Il prodotto è la conseguenza della cura, non la sua
+            origine.</p>
+
+            <h3 class="serif">I valori di Filosophia</h3>
+            <ul>
+                <li><strong>Personalizzazione.</strong> Nessun protocollo standard, nessun pacchetto uguale per tutte.</li>
+                <li><strong>Competenza.</strong> Quindici anni di pratica e formazione continua sulla pelle e sugli attivi.</li>
+                <li><strong>Rituale.</strong> I risultati arrivano dalla costanza, non dalla seduta miracolosa.</li>
+                <li><strong>Trasparenza.</strong> Se una cosa non serve, Filosophia te lo dice. Anche quando è in vendita in boutique.</li>
+            </ul>
+
+            <hr>
+
+            <p><strong>La missione, in una riga.</strong> Accompagnare ogni donna in un
+            rituale di cura che parte dalla pelle e arriva all'identità. E diventare, a
+            Rovereto e in Vallagarina, il posto dove ci si ritaglia quel tempo.</p>
+
+            <p style="margin-top:2rem">
+                <a class="button button-secondary" href="{{ '/skin-passport/' | relative_url }}">Come il rituale resta nel tempo <span class="arrow" aria-hidden="true">→</span></a>
+            </p>
+
+        </div>
+    </div>
+</section>
+
+{% include cta.html %}

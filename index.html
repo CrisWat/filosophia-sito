@@ -1,0 +1,280 @@
+---
+layout: default
+title: "Filosophia · Skin Ritual Beauty Boutique a Rovereto"
+description: "Analisi della pelle, rituali viso su misura, dermocosmesi selezionata a Rovereto. La bellezza inizia da te. Apertura novembre 2026."
+---
+
+<section class="hero" id="home">
+
+    <canvas id="filo" aria-hidden="true"></canvas>
+
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+
+            <div class="hero-tag reveal">
+                <span class="line" aria-hidden="true"></span>
+                <p class="eyebrow">{{ site.data.profiles.apertura }} · {{ site.data.profiles.indirizzo.citta }} ({{ site.data.profiles.indirizzo.provincia }})</p>
+            </div>
+
+            <h1 class="reveal">La bellezza<br><em>inizia da te.</em></h1>
+
+            <p class="hero-claim serif reveal">
+                Rituali di bellezza su misura — per la tua pelle,
+                per il tuo benessere, per la tua essenza.
+            </p>
+
+            <p class="hero-description reveal">
+                Analisi della pelle, rituali in cabina, dermocosmesi selezionata.
+                Non un prodotto da comprare: un percorso costruito su di te.
+            </p>
+
+            <div class="hero-actions reveal">
+                <a class="button button-primary" href="{{ '/prenota/' | relative_url }}">
+                    Prenota la consulenza
+                    <span class="arrow" aria-hidden="true">→</span>
+                </a>
+                <a class="button button-secondary" href="{{ '/rituali/' | relative_url }}">
+                    Scopri i rituali
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-visual reveal">
+            <div class="hero-arch">
+                <div class="arch-frame">
+                    <img src="{{ '/assets/images/vetrina.jpg' | relative_url }}?v=2"
+                         alt="La vetrina di Filosophia in Via Carducci, sotto l'arco in pietra: l'insegna e, oltre il vetro, il salotto bordeaux"
+                         width="1122" height="1402" loading="eager" decoding="async">
+                </div>
+                <div class="hero-inset">
+                    <img src="{{ '/assets/images/cabina-800.jpg' | relative_url }}?v=2"
+                         alt="La cabina dei trattamenti"
+                         width="800" height="600" loading="eager" decoding="async"
+                         style="object-position: 40% 55%">
+                </div>
+                <div class="hero-badge">
+                    {% include sprig.html %}
+                    <strong>{{ site.data.profiles.indirizzo.via }}</strong>
+                    <span>{{ site.data.profiles.indirizzo.citta }}</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section section-wall" id="valori">
+    <div class="container">
+
+        <div class="wall-head reveal">
+            {% include sprig.html %}
+            <p class="eyebrow">Cosa muove Filosophia</p>
+            <h2 class="serif">Filosophia non vende bellezza.<br><em>Crea rituali.</em></h2>
+            <div class="rule" aria-hidden="true"></div>
+            <p>Cinque principi che tengono insieme ogni gesto.</p>
+        </div>
+
+        <div class="pillar-grid">
+            {% for v in site.data.valori %}
+            <article class="pillar reveal">
+                <h3 class="serif">{{ v.titolo }}</h3>
+                <p>{{ v.testo }}</p>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<section class="section" id="spazio">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <p class="eyebrow">Lo spazio</p>
+            <h2 class="serif">Un luogo pensato<br>per rallentare.</h2>
+            <p>Luce calda, legno, marmo e tessuti morbidi. Un appuntamento per volta,
+            nel centro di {{ site.data.profiles.indirizzo.citta }}.</p>
+        </div>
+
+        <div class="space-grid">
+            <figure class="space-item space-main reveal">
+                <img src="{{ '/assets/images/salotto.jpg' | relative_url }}?v=2"
+                     alt="Il salotto bordeaux: due poltrone in bouclé sotto il logo, e il tavolo in vetro con lo strumento per l'analisi della pelle"
+                     width="1088" height="1445" loading="lazy" decoding="async"
+                     style="object-position: 50% 60%">
+                <figcaption><span>01</span> Il salotto</figcaption>
+            </figure>
+            <figure class="space-item space-side reveal">
+                <img src="{{ '/assets/images/spazio-ingresso.jpg' | relative_url }}?v=2"
+                     alt="La boutique: il banco in rovere, gli scaffali con la dermocosmesi e il lampadario a soffione"
+                     width="1536" height="1024" loading="lazy" decoding="async"
+                     style="object-position: 40% 50%">
+                <figcaption><span>02</span> La boutique</figcaption>
+            </figure>
+            <figure class="space-item space-side reveal">
+                <img src="{{ '/assets/images/cabina-800.jpg' | relative_url }}?v=2"
+                     alt="La cabina: lettino, lampada ad arco e la scritta luminosa «but first skin care»"
+                     width="800" height="600" loading="lazy" decoding="async">
+                <figcaption><span>03</span> La cabina</figcaption>
+            </figure>
+        </div>
+
+        <div class="space-note reveal">
+            <div>
+                <h3>Un appuntamento per volta</h3>
+                <p>L'agenda è a slot: quando sei da Filosophia, lo spazio è tuo.</p>
+            </div>
+            <div>
+                <h3>Prima si guarda</h3>
+                <p>La postazione di analisi è il primo passo di ogni percorso.</p>
+            </div>
+            <div>
+                <h3>Prova prima di scegliere</h3>
+                <p>Ogni prodotto sullo scaffale si prova in cabina.</p>
+            </div>
+        </div>
+
+        {% include porta-aperta.html %}
+
+    </div>
+</section>
+
+
+<section class="section section-alt" id="percorso">
+    <div class="container split">
+
+        <div class="split-sticky">
+            <div class="section-heading reveal" style="margin-bottom:0">
+                <p class="eyebrow">Il percorso</p>
+                <h2 class="serif">Cinque passi,<br>uno alla volta.</h2>
+                <p>Nessuna vendita al primo incontro.</p>
+            </div>
+            <div class="arch-frame reveal">
+                <img src="{{ '/assets/images/analisi-tavolo.jpg' | relative_url }}?v=2"
+                     alt="Il tavolo dell'analisi della pelle, con lo strumento di lettura davanti alla parete bordeaux"
+                     width="588" height="735" loading="lazy" decoding="async">
+            </div>
+        </div>
+
+        <div>
+            <div class="journey">
+                {% for step in site.data.percorso %}
+                <article class="journey-step reveal">
+                    <span class="journey-num serif">{{ step.numero }}</span>
+                    <div>
+                        <h3 class="serif">{{ step.titolo }}{% if step.prossimamente %} <span class="soon">Prossimamente</span>{% endif %}</h3>
+                        <p>{{ step.testo }}</p>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+
+            <p style="margin-top:2.5rem" class="reveal">
+                <a class="button button-secondary" href="{{ '/skin-passport/' | relative_url }}">Cos'è lo Skin Passport <span class="arrow" aria-hidden="true">→</span></a>
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="quote-band">
+    <img class="quote-bg" src="{{ '/assets/images/cabina.jpg' | relative_url }}?v=2" alt="" aria-hidden="true"
+         width="1448" height="1086" loading="lazy" decoding="async">
+    <div class="container reveal">
+        {% include sprig.html %}
+        <blockquote class="serif">La pelle è l'effetto, non la causa.</blockquote>
+        <cite>Il principio di Filosophia</cite>
+    </div>
+</section>
+
+
+<section class="section" id="cura">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <p class="eyebrow">Cosa troverai</p>
+            <h2 class="serif">Tre modi di prendersi cura.</h2>
+        </div>
+
+        <div class="card-grid">
+
+            <article class="card card-photo reveal">
+                <div class="card-media">
+                    <img src="{{ '/assets/images/analisi.jpg' | relative_url }}?v=2" alt="La postazione di analisi della pelle"
+                         width="532" height="399" loading="lazy" decoding="async">
+                </div>
+                <div class="card-body">
+                    <span class="role">01 · Analisi</span>
+                    <h3 class="serif">Leggere la pelle</h3>
+                    <p>Lettura computerizzata dello stato cutaneo e consulenza dedicata. Il punto di partenza di ogni percorso.</p>
+                    <a class="card-link" href="{{ '/rituali/' | relative_url }}">Scopri l'analisi →</a>
+                </div>
+            </article>
+
+            <article class="card card-photo reveal">
+                <div class="card-media">
+                    <img src="{{ '/assets/images/cabina-800.jpg' | relative_url }}?v=2" alt="Il lettino della cabina con la lampada ad arco"
+                         width="800" height="600" loading="lazy" decoding="async" >
+                </div>
+                <div class="card-body">
+                    <span class="role">02 · Cabina <span class="soon">Prossimamente</span></span>
+                    <h3 class="serif">Rituali viso</h3>
+                    <p>Protocolli viso costruiti sulla singola pelle: mai lo stesso trattamento per due persone diverse.</p>
+                    <a class="card-link" href="{{ '/rituali/' | relative_url }}">Vedi i rituali →</a>
+                </div>
+            </article>
+
+            <article class="card card-photo reveal">
+                <div class="card-media">
+                    <img src="{{ '/assets/images/scaffali.jpg' | relative_url }}?v=2" alt="Gli scaffali in rovere con la dermocosmesi selezionata"
+                         width="540" height="405" loading="lazy" decoding="async">
+                </div>
+                <div class="card-body">
+                    <span class="role">03 · Boutique</span>
+                    <h3 class="serif">Dermocosmesi scelta</h3>
+                    <p>Poche case cosmetiche, provate in cabina prima di essere consigliate. Formule leggibili, nessuna promessa gonfiata.</p>
+                    <a class="card-link" href="{{ '/boutique/' | relative_url }}">La boutique →</a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="section section-alt" id="filomena">
+    <div class="container">
+        <div class="hero-grid" style="align-items:center">
+
+            <div class="reveal">
+                <p class="eyebrow">La fondatrice</p>
+                <h2 class="serif" style="font-size:clamp(2.2rem,4.6vw,3.5rem)">Quindici anni di mani sulla pelle.</h2>
+                <p style="margin-top:1.4rem;color:var(--ink-soft);max-width:48ch">
+                    <strong style="color:var(--ink)">Filomena Mazzarella</strong> ha passato
+                    quindici anni a leggere pelli e ad ascoltare persone. Filosophia nasce da
+                    lì: un luogo dove ognuno possa sentirsi ascoltato, visto, accolto. Lo
+                    spazio e gli strumenti sono il contorno; il cuore è lei.
+                </p>
+                <p style="margin-top:2rem">
+                    <a class="button button-secondary" href="{{ '/filomena/' | relative_url }}">Conosci Filomena <span class="arrow" aria-hidden="true">→</span></a>
+                </p>
+            </div>
+
+            <div class="hero-visual reveal" style="max-width:420px;width:100%;justify-self:end">
+                <div class="hero-frame">
+                    <img src="{{ '/assets/images/filomena-2.jpg' | relative_url }}"
+                         alt="Filomena Mazzarella, fondatrice di Filosophia" width="762" height="1024"
+                         loading="lazy" decoding="async" style="object-position: 50% 12%">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% include cta.html %}

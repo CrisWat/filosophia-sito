@@ -1,0 +1,20 @@
+- numero: "01"
+  titolo: "Incontro"
+  testo: "Si comincia dall'ascolto. Abitudini, stagioni, quello che la pelle sta raccontando."
+
+- numero: "02"
+  titolo: "Analisi della pelle"
+  testo: "Lettura computerizzata e consulenza dedicata. Dati, non impressioni."
+
+- numero: "03"
+  titolo: "Cabina"
+  prossimamente: true   # togli questa riga quando i trattamenti partono
+  testo: "Il trattamento in cui i prodotti scelti vengono provati sulla tua pelle."
+
+- numero: "04"
+  titolo: "Routine a casa"
+  testo: "Poche cose, quelle giuste. Spiegate gesto per gesto."
+
+- numero: "05"
+  titolo: "Rituale"
+  testo: "Controllo, confronto, aggiustamenti. Il percorso resta scritto."

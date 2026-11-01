@@ -1,0 +1,36 @@
+# ---------------------------------------------------------------
+# Contenuto dello Skin Passport (pagina /skin-passport/).
+# Due letture che stanno insieme: quella della luce (si misura)
+# e quella della persona (si ascolta).
+# Niente nomi di marchi o di strumenti, niente linguaggio medico.
+# ---------------------------------------------------------------
+
+misura:
+  - nome: "Idratazione"
+    testo: "Quanta acqua trattiene la pelle."
+  - nome: "Sebo"
+    testo: "L'equilibrio tra secco e lucido."
+  - nome: "Pori e grana"
+    testo: "La trama della superficie."
+  - nome: "Rossori"
+    testo: "Dove la pelle si sta difendendo."
+  - nome: "Imperfezioni"
+    testo: "Quello che affiora, zona per zona."
+  - nome: "Macchie"
+    testo: "In superficie e in profondità."
+  - nome: "Linee sottili"
+    testo: "Dove il viso si piega più spesso."
+  - nome: "Il profilo"
+    testo: "Tipo di pelle, tono e tendenze, su sedici profili possibili."
+
+ascolto:
+  - nome: "La routine"
+    testo: "Cosa usi oggi, e come."
+  - nome: "Le abitudini"
+    testo: "Sonno, sole, stress, movimento."
+  - nome: "Le stagioni"
+    testo: "Com'è la tua pelle a gennaio, e com'è a luglio."
+  - nome: "Le sensibilità"
+    testo: "Quello che la pelle non tollera."
+  - nome: "L'obiettivo"
+    testo: "Detto con le tue parole."

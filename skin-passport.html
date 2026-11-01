@@ -1,0 +1,155 @@
+---
+layout: default
+permalink: /skin-passport/
+title: "Skin Passport"
+description: "La memoria del tuo rituale: quello che si è visto, quello che si è scelto insieme, come è andata. Da Filosophia, beauty boutique a Rovereto."
+---
+
+<section class="page-hero has-wash">
+    <div class="container">
+        <div class="page-hero-inner reveal">
+            <p class="eyebrow">Il filo nel tempo</p>
+            <h1 class="serif">Skin Passport</h1>
+            <p class="lede">La memoria del tuo rituale.</p>
+        </div>
+    </div>
+    <div class="thread-rule" aria-hidden="true"></div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <div class="hero-grid" style="align-items:center">
+
+            <div class="reveal">
+                <h2 class="serif" style="font-size:clamp(1.9rem,4.4vw,3.2rem)">Ogni pelle<br>ha una storia.</h2>
+                <p style="margin-top:1.6rem;color:var(--ink-soft);font-size:1.1rem;max-width:38ch">
+                    Lo Skin Passport è dove quella storia resta scritta: quello che
+                    si è visto, quello che si è scelto insieme, come è andata.
+                </p>
+                <p style="margin-top:1.2rem;color:var(--ink-soft);max-width:38ch">
+                    Serve a una cosa sola — <strong style="color:var(--ink);font-weight:400">non ricominciare mai da capo.</strong>
+                </p>
+            </div>
+
+            <div class="arch-frame reveal" style="max-width:460px;width:100%;justify-self:end">
+                <img src="{{ '/assets/images/analisi-tavolo.jpg' | relative_url }}?v=2"
+                     alt="La postazione per l'analisi della pelle"
+                     width="588" height="735" loading="lazy" decoding="async">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="section section-alt has-wash">
+    <div class="container">
+        <div class="kanji-panel reveal">
+
+            <div class="panel-sprig" aria-hidden="true">
+                {% include sprig.html %}
+                <small>Filo</small>
+            </div>
+
+            <div>
+                <h2 class="serif" style="font-size:clamp(1.8rem,4vw,2.8rem)">Un filo, non un punto.</h2>
+                <p style="margin-top:1.4rem;color:var(--ink-soft);max-width:46ch">
+                    Una seduta da sola è un punto. Tante sedute, ricordate e collegate,
+                    diventano un filo: è da qui che Filosophia prende il nome. Lo Skin Passport
+                    tiene insieme quel filo, così ogni appuntamento riparte da dove ci si era lasciati.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="section" id="dentro">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <p class="eyebrow">Cosa c'è dentro</p>
+            <h2 class="serif">Quello che si misura.<br><em>Quello che si ascolta.</em></h2>
+            <p>Lo Skin Passport tiene insieme due letture: quella della luce e quella
+            della persona. Nessuna delle due, da sola, basta.</p>
+        </div>
+
+        <div class="passport-cols">
+
+            <div class="passport-col reveal">
+                <p class="eyebrow">Si misura</p>
+                <p class="passport-intro serif">Otto luci, tre angolazioni: la superficie, e quello che l'occhio non vede.</p>
+                <ul class="passport-list">
+                    {% for v in site.data.passaporto.misura %}
+                    <li><strong>{{ v.nome }}</strong><span>{{ v.testo }}</span></li>
+                    {% endfor %}
+                </ul>
+                <p class="passport-foot">Più le fotografie di riferimento, sempre nella stessa luce e nella stessa posa.</p>
+            </div>
+
+            <div class="passport-col reveal">
+                <p class="eyebrow">Si ascolta</p>
+                <p class="passport-intro serif">Il resto lo racconti tu. È la parte che nessuno strumento legge.</p>
+                <ul class="passport-list">
+                    {% for v in site.data.passaporto.ascolto %}
+                    <li><strong>{{ v.nome }}</strong><span>{{ v.testo }}</span></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="passport-bridge reveal">
+            {% include sprig.html %}
+            <p>In mezzo c'è la lettura di Filomena: <strong>tre priorità per adesso</strong>,
+            e i gesti per arrivarci. Scritti, perché non dipendano dal ricordarsi.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section section-alt">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <p class="eyebrow">I tempi della pelle</p>
+            <h2 class="serif">La pelle ha i suoi tempi.<br>Filosophia li rispetta.</h2>
+        </div>
+
+        <div class="figures reveal">
+            <div class="figure-cell">
+                <span class="figure-num serif">28</span>
+                <p>giorni — un ciclo di rinnovamento. Si rileggono idratazione, sebo, rossori.</p>
+            </div>
+            <div class="figure-cell">
+                <span class="figure-num serif">6</span>
+                <p>settimane — i primi segnali in superficie: grana, pori, imperfezioni.</p>
+            </div>
+            <div class="figure-cell">
+                <span class="figure-num serif">3</span>
+                <p>mesi — il cambiamento diventa struttura: macchie, uniformità del tono.</p>
+            </div>
+        </div>
+
+        <p class="figures-note reveal">Ogni controllo si fa nella stessa luce e nella stessa posa.
+        La pelle si confronta con se stessa, non con un ideale.</p>
+
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <div class="statement reveal">
+            {% include sprig.html %}
+            <h2 class="serif">La memoria è generosa. Gli appunti no.</h2>
+            <p>Per questo il percorso si scrive: per capire cosa ha funzionato davvero
+            — e cosa no.</p>
+        </div>
+    </div>
+</section>
+
+{% include cta.html %}

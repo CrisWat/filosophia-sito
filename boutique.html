@@ -1,0 +1,53 @@
+---
+layout: default
+permalink: /boutique/
+title: "Boutique"
+description: "La selezione dermocosmetica di Filosophia: due linee, Azra Botanical Simplicity e Casa Mei, scelte una per una e provate in cabina prima di essere consigliate."
+---
+
+<section class="page-hero">
+    <div class="container page-hero-grid">
+        <div class="page-hero-inner reveal">
+            <p class="eyebrow">La selezione</p>
+            <h1 class="serif">Boutique</h1>
+            <p class="lede">Due linee, scelte una per una. Nessun prodotto arriva sullo scaffale prima di essere stato provato in cabina.</p>
+            <p style="margin-top:1.8rem"><a class="button button-primary" href="{{ '/listino/' | relative_url }}">Il listino prodotti <span class="arrow" aria-hidden="true">→</span></a></p>
+        </div>
+        <div class="page-hero-media reveal">
+            <img src="{{ '/assets/images/boutique-hero.jpg' | relative_url }}?v=2" alt="La boutique: il banco in rovere, gli scaffali con la dermocosmesi selezionata e il lampadario a soffione"
+                 width="900" height="720" loading="eager" decoding="async" style="object-position: 50% 50%">
+        </div>
+    </div>
+    <div class="thread-rule" aria-hidden="true"></div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <div class="card-grid">
+            {% for m in site.data.marchi %}
+            <article class="card reveal">
+                <span class="role">{{ m.ruolo }}</span>
+                <h3 class="serif">{{ m.nome }}</h3>
+                <p>{{ m.testo }}</p>
+                {% if m.ancora %}<a class="card-link" href="{{ '/listino/' | relative_url }}#{{ m.ancora }}">Vedi i prodotti →</a>{% endif %}
+            </article>
+            {% endfor %}
+        </div>
+
+        <div class="prose reveal" style="margin-top:3.5rem">
+            <h2 class="serif">Come sceglie Filosophia</h2>
+            <p>Il criterio è semplice e un po' scomodo per chi vende: <strong>meglio formule
+            leggibili che promesse memorabili</strong>. Un prodotto entra in selezione se l'INCI regge
+            la lettura, se la casa sa spiegare le concentrazioni e se, provato in cabina su
+            pelli diverse, si comporta come dice di fare.</p>
+            <p>Il resto — la moda del momento, l'ingrediente di stagione, la confezione che
+            fotografa bene — non è un motivo sufficiente.</p>
+        </div>
+
+        {% include porta-aperta.html %}
+
+    </div>
+</section>
+
+{% include cta.html %}

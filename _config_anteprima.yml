@@ -1,0 +1,20 @@
+# ---------------------------------------------------------------
+# Anteprima del sito COMPLETO sul tuo computer (e sul telefono,
+# se è sulla stessa rete Wi-Fi). GitHub Pages ignora questo file.
+#
+#   bundle exec jekyll serve --host 0.0.0.0 --config _config.yml,_config_anteprima.yml
+#
+# Sul telefono apri:  http://<indirizzo-del-mac>:4000
+# (l'indirizzo lo trovi con:  ipconfig getifaddr en0)
+# ---------------------------------------------------------------
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - _private
+  - _bozze
+  - GUIDA.md
+  - FOTO-DA-FARE.md
+  - "Claude outputs"
+  - in-arrivo.html

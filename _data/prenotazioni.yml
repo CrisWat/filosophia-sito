@@ -1,0 +1,19 @@
+# ---------------------------------------------------------------
+# Prenotazioni online (pagina /prenota/)
+#
+# url_script: l'indirizzo dell'app web del gestionale (finisce con
+# /exec). Lo stesso indirizzo apre il gestionale di Filomena e
+# risponde al sito con gli orari liberi. Installazione e
+# aggiornamento: _google-script/gestionale/GUIDA.md
+#
+# Finché il gestionale non è aggiornato alla versione con l'agenda,
+# la pagina mostra da sola l'invito a scrivere su WhatsApp.
+#
+# Orari, durata e regole NON si cambiano qui: stanno nella scheda
+# Config del Foglio (parametri PREN_… e blocco ORARI PRENOTAZIONI).
+# ---------------------------------------------------------------
+
+url_script: "https://script.google.com/macros/s/AKfycbw8LpsFLw0KlddPw0NgQRsuJaMwJhhiKNgJ5WJq1FMkvqZA6zJTcrtNp90wqY2V3Jlq/exec"
+
+servizio: "Consulenza viso"
+durata: "45 minuti"

@@ -1,0 +1,33 @@
+title: "Filosophia"
+tagline: "Skincare consulting · Ritual · Boutique"
+description: "Beauty boutique a Rovereto: analisi della pelle, rituali viso su misura, dermocosmesi selezionata. La bellezza inizia da te. Apertura novembre 2026."
+
+author:
+  name: "Filomena Mazzarella"
+
+lang: "it-IT"
+timezone: "Europe/Rome"
+
+url: "https://www.filosophiaboutique.it"
+baseurl: ""
+
+markdown: kramdown
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - _private
+  - _bozze
+  - GUIDA.md
+  - FOTO-DA-FARE.md
+  - "Claude outputs"
+  # Sito lanciato il 1/11/2026: la pagina "Prossimamente" non si pubblica più.
+  - in-arrivo.html

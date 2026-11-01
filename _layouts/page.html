@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-inner reveal">
+            {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
+            <h1 class="serif">{{ page.title }}</h1>
+            {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+        </div>
+    </div>
+    <div class="thread-rule" aria-hidden="true"></div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="prose reveal">
+            {{ content }}
+        </div>
+    </div>
+</section>
+
+{% include cta.html %}

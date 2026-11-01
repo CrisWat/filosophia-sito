@@ -1,0 +1,70 @@
+---
+layout: null
+permalink: /
+# Pagina "in arrivo": è online solo finché in _config.yml è attivo
+# il blocco "MODALITÀ IN ARRIVO". Vedi GUIDA.md, sezione 6.
+---
+<!doctype html>
+<html lang="it-IT">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#FAF7F2">
+    <title>{{ site.data.profiles.brand }} · Prossimamente</title>
+    <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
+    <link rel="apple-touch-icon" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
+    <style>
+        html, body { height: 100%; }
+        body {
+            margin: 0;
+            min-height: 100svh;
+            display: grid;
+            place-items: center;
+            background: var(--cream);
+            color: var(--ink);
+            text-align: center;
+            padding: 2rem 1.25rem;
+            box-sizing: border-box;
+        }
+        .soon-wrap { display: grid; justify-items: center; gap: 1.6rem; max-width: 34rem; }
+        .soon-wrap .sprig { width: 34px; color: var(--bordeaux); }
+        .soon-word { width: min(320px, 72vw); height: auto; }
+        .soon-payoff {
+            font-size: 0.62rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--taupe);
+            margin: -0.6rem 0 0;
+        }
+        .soon-rule { width: 64px; height: 1px; background: var(--greige); }
+        .soon-title {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(2.2rem, 7vw, 3.4rem);
+            line-height: 1.1;
+            color: var(--bordeaux);
+            margin: 0;
+        }
+        .soon-place {
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <main class="soon-wrap">
+        {% include sprig.html %}
+        <img class="soon-word" src="{{ '/assets/images/wordmark-bordeaux.svg' | relative_url }}" alt="{{ site.data.profiles.brand }}" width="320" height="113">
+        <p class="soon-payoff">{{ site.data.profiles.payoff }}</p>
+        <div class="soon-rule" aria-hidden="true"></div>
+        <h1 class="soon-title">Prossimamente.</h1>
+        <p class="soon-place">{{ site.data.profiles.indirizzo.citta }}</p>
+    </main>
+</body>
+</html>

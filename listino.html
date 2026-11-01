@@ -1,0 +1,116 @@
+---
+layout: default
+permalink: /listino/
+title: "Listino prodotti"
+description: "Il listino della boutique Filosophia a Rovereto: le due linee, Azra Botanical Simplicity e Casa Mei, con descrizione dei prodotti e prezzi IVA inclusa."
+---
+
+<section class="ls-hero">
+    <div class="container ls-hero-inner">
+        {% include sprig.html %}
+        <p class="eyebrow">La boutique · Via Carducci, Rovereto</p>
+        <h1 class="serif">Il listino</h1>
+        <p class="ls-hero-lede">Due linee, scelte una per una e provate in cabina. Qui trovi ogni prodotto con il suo prezzo; in boutique Filomena ti aiuta a scegliere quello giusto per la tua pelle.</p>
+
+        <div class="ls-lines">
+            {% for linea in site.data.listino.linee %}
+            {% assign n = 0 %}
+            {% for g in linea.gruppi %}{% assign n = n | plus: g.prodotti.size %}{% endfor %}
+            <a class="ls-line-card" href="#{{ linea.id }}">
+                <span class="ls-line-origin">{{ linea.origine }}</span>
+                <span class="ls-line-name serif">{{ linea.nome }}</span>
+                <span class="ls-line-count">{{ n }} prodotti <span aria-hidden="true">→</span></span>
+            </a>
+            {% endfor %}
+        </div>
+        <p class="ls-hero-note">Prezzi finali in euro</p>
+    </div>
+</section>
+
+{% for linea in site.data.listino.linee %}
+{% assign n = 0 %}
+{% for g in linea.gruppi %}{% assign n = n | plus: g.prodotti.size %}{% endfor %}
+<section class="ls-line" id="{{ linea.id }}" aria-labelledby="{{ linea.id }}-titolo">
+    <div class="container">
+
+        <header class="ls-line-head">
+            <div class="ls-line-title">
+                <p class="eyebrow">{{ linea.origine }} · {{ n }} prodotti</p>
+                <h2 class="serif" id="{{ linea.id }}-titolo">{{ linea.nome }}</h2>
+                <p>{{ linea.testo }}</p>
+            </div>
+            <nav class="ls-index" aria-label="Categorie {{ linea.breve }}">
+                <p class="ls-index-label">{% if linea.routine %}{{ linea.routine }}{% else %}Le categorie{% endif %}</p>
+                <ol>
+                    {% for g in linea.gruppi %}
+                    <li><a href="#{{ g.id }}">{% if g.passo %}<span class="ls-step">{{ g.passo }}</span>{% endif %}<span class="ls-index-name">{{ g.nome }}</span><span class="ls-index-n">{{ g.prodotti.size }}</span></a></li>
+                    {% endfor %}
+                </ol>
+            </nav>
+        </header>
+
+        {% for g in linea.gruppi %}
+        <section class="ls-group" id="{{ g.id }}" aria-labelledby="{{ g.id }}-t">
+            <div class="ls-group-head">
+                <div>
+                    {% if g.passo %}<p class="ls-group-kicker"><span class="ls-step">{{ g.passo }}</span>Passo {{ g.passo }} di {{ linea.gruppi.size }}</p>{% endif %}
+                    <h3 class="serif" id="{{ g.id }}-t">{{ g.nome }}</h3>
+                    <p>{{ g.descrizione }}</p>
+                </div>
+            </div>
+
+            <div class="ls-grid">
+                {% for p in g.prodotti %}
+                <article class="ls-card">
+                    <div class="ls-card-top">
+                        <span class="ls-card-note">{{ p.nota }}</span>
+                        <span class="ls-card-size">{{ p.formato }}</span>
+                    </div>
+                    <h4 class="serif">{{ p.nome }}</h4>
+                    <p class="ls-card-desc">{{ p.descrizione }}</p>
+                    {% if p.attivi %}
+                    <ul class="ls-tags" aria-label="Attivi principali">
+                        {% for a in p.attivi %}<li>{{ a }}</li>{% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% if p.uso %}<p class="ls-card-use"><span>Come si usa</span>{{ p.uso }}</p>{% endif %}
+                    <div class="ls-card-foot">
+                        <span class="ls-card-vat">Prezzo finale</span>
+                        <span class="ls-card-price"><small>€</small>{{ p.prezzo }}</span>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+        {% endfor %}
+
+    </div>
+</section>
+{% endfor %}
+
+{% if site.data.listino.cabina %}
+<section class="ls-cabin" aria-labelledby="cabina-titolo">
+    <div class="container ls-cabin-inner">
+        <div class="ls-cabin-head">
+            {% include sprig.html %}
+            <p class="eyebrow">Solo in cabina · prossimamente</p>
+            <h2 class="serif" id="cabina-titolo">Quello che si usa durante i rituali</h2>
+            <p>Alcuni prodotti esistono solo in formato professionale: si usano nei trattamenti e non sono in vendita.</p>
+        </div>
+        <ul role="list">
+            {% for c in site.data.listino.cabina %}<li>{{ c }}</li>{% endfor %}
+        </ul>
+    </div>
+</section>
+{% endif %}
+
+<section class="ls-terms">
+    <div class="container">
+        <div class="ls-terms-grid">
+            <p><strong>Sui prezzi.</strong> Prezzi finali al pubblico, in euro. Il listino può cambiare senza preavviso: fa fede il prezzo esposto in boutique. I prodotti si acquistano in negozio; per sapere se un articolo è disponibile basta un messaggio.</p>
+            <p><strong>Una nota di correttezza.</strong> Le descrizioni sono informative e riprendono le indicazioni dei produttori. Sono cosmetici: non sostituiscono il parere di un medico o di un dermatologo.</p>
+        </div>
+    </div>
+</section>
+
+{% include cta.html %}

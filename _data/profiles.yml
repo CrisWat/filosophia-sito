@@ -1,0 +1,46 @@
+# ---------------------------------------------------------------
+# Dati di contatto del negozio.
+# I campi contrassegnati DA COMPLETARE vanno sostituiti prima
+# della pubblicazione online.
+# ---------------------------------------------------------------
+
+brand: "Filosophia"
+payoff: "Skincare consulting · Ritual · Boutique"
+founder: "Filomena Mazzarella"
+
+apertura: "Novembre 2026"
+
+indirizzo:
+  via: "Via Carducci, 1/B"
+  citta: "Rovereto"
+  provincia: "TN"
+  cap: "38068"
+  mappa: "https://maps.google.com/?q=Via+Carducci+1/B,+38068+Rovereto+TN"
+  # Coordinate del segnaposto sulla mappa del sito (Via Carducci 1/B, Google Maps).
+  lat: 45.889066
+  lon: 11.041845
+
+telefono: "+393921034362"
+telefono_display: "+39 392 103 4362"
+whatsapp: "https://wa.me/393921034362"
+# Email della boutique
+email: "filosophiaboutique@gmail.com"
+
+instagram: "https://www.instagram.com/filosophia.boutique"
+instagram_handle: "@filosophia.boutique"
+facebook: ""                                        # opzionale
+
+orari:
+  - giorni: "Lunedì"
+    ore: "14.00 – 18.00"
+  - giorni: "Martedì – Giovedì"
+    ore: "9.00 – 17.00"
+  - giorni: "Venerdì"
+    ore: "10.00 – 18.00"
+  - giorni: "Sabato"
+    ore: "10.00 – 13.00"
+  - giorni: "Domenica"
+    ore: "Chiuso"
+
+# Testo legale a piè di pagina
+ragione_sociale: "Filosophia di Filomena Mazzarella — P.IVA 02852200225"

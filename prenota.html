@@ -1,0 +1,299 @@
+---
+layout: default
+permalink: /prenota/
+title: "Prenota la consulenza viso"
+description: "Prenota online la consulenza viso da Filosophia, in Via Carducci 1/B a Rovereto. Orari, WhatsApp, come arrivare e domande frequenti."
+---
+
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-inner page-hero-wide reveal">
+            <p class="eyebrow">Prenotazione online</p>
+            <h1 class="serif">Prenota la tua <em>consulenza viso.</em></h1>
+            <p class="lede">Quarantacinque minuti per guardare la tua pelle e ascoltare la sua storia. Ogni percorso comincia da qui.</p>
+            <p class="hero-jump"><a href="#contatti">Contatti e orari</a> · <a href="#mappa">Come arrivare</a> · <a href="#faq">Domande frequenti</a></p>
+        </div>
+    </div>
+    <div class="thread-rule" aria-hidden="true"></div>
+</section>
+
+
+<section class="section booking-section">
+    <div class="container booking-layout">
+
+        <aside class="booking-info reveal" aria-label="La consulenza">
+            <div class="arch-frame booking-photo">
+                <img src="{{ '/assets/images/analisi.jpg' | relative_url }}?v=2"
+                     alt="La postazione per l'analisi della pelle"
+                     width="532" height="399" loading="lazy" decoding="async">
+            </div>
+
+            <p class="eyebrow">{{ site.data.prenotazioni.servizio }}</p>
+            <p class="booking-duration serif">{{ site.data.prenotazioni.durata }}</p>
+
+            <ul class="booking-steps">
+                <li><span class="serif">01</span> Ascolto: abitudini, routine, quello che senti.</li>
+                <li><span class="serif">02</span> Analisi della pelle con strumentazione dedicata.</li>
+                <li><span class="serif">03</span> Prime indicazioni, scritte nel tuo Skin Passport.</li>
+            </ul>
+
+            <p class="booking-note">Nessun acquisto richiesto: al primo incontro non si vende nulla.</p>
+
+            <div class="booking-where">
+                {% include sprig.html %}
+                <p>
+                    <strong>{{ site.data.profiles.indirizzo.via }}</strong><br>
+                    {{ site.data.profiles.indirizzo.cap }} {{ site.data.profiles.indirizzo.citta }} ({{ site.data.profiles.indirizzo.provincia }})
+                </p>
+            </div>
+        </aside>
+
+
+        <div class="booking reveal" id="booking"
+             data-endpoint="{{ site.data.prenotazioni.url_script }}"
+             data-servizio="{{ site.data.prenotazioni.servizio }}"
+             data-durata="{{ site.data.prenotazioni.durata }}"
+             data-brand="{{ site.data.profiles.brand }}"
+             data-indirizzo="{{ site.data.profiles.indirizzo.via }}, {{ site.data.profiles.indirizzo.cap }} {{ site.data.profiles.indirizzo.citta }} {{ site.data.profiles.indirizzo.provincia }}"
+             data-whatsapp="{{ site.data.profiles.whatsapp }}">
+
+            <!-- Passo 1 · giorno -->
+            <div class="booking-step" data-step="giorno">
+                <h2 class="booking-title"><span>1</span> Scegli il giorno</h2>
+                <div class="cal" hidden>
+                    <div class="cal-head">
+                        <button type="button" class="cal-nav" data-dir="-1" aria-label="Mese precedente">‹</button>
+                        <p class="cal-month serif" aria-live="polite"></p>
+                        <button type="button" class="cal-nav" data-dir="1" aria-label="Mese successivo">›</button>
+                    </div>
+                    <div class="cal-grid" role="grid"></div>
+                </div>
+                <div class="booking-status" role="status" aria-live="polite">
+                    <span class="loader" aria-hidden="true"></span> Carico gli orari liberi…
+                </div>
+            </div>
+
+            <!-- Passo 2 · orario -->
+            <div class="booking-step" data-step="ora" hidden>
+                <h2 class="booking-title"><span>2</span> Scegli l'orario</h2>
+                <p class="booking-chosen-day"></p>
+                <p class="slot-notice" role="alert" hidden></p>
+                <div class="slots"></div>
+            </div>
+
+            <!-- Passo 3 · dati -->
+            <form class="booking-step booking-form" data-step="dati" hidden novalidate>
+                <h2 class="booking-title"><span>3</span> I tuoi dati</h2>
+                <p class="booking-summary"></p>
+
+                <div class="field">
+                    <label for="b-nome">Nome e cognome</label>
+                    <input id="b-nome" name="nome" type="text" autocomplete="name" required minlength="3" maxlength="80">
+                </div>
+                <div class="field-row">
+                    <div class="field">
+                        <label for="b-tel">Telefono</label>
+                        <input id="b-tel" name="telefono" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+39 …">
+                    </div>
+                    <div class="field">
+                        <label for="b-email">Email <small>facoltativa</small></label>
+                        <input id="b-email" name="email" type="email" autocomplete="email">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="b-note">C'è qualcosa che vuoi dirci prima? <small>facoltativo · niente informazioni sulla salute: ne parliamo a voce</small></label>
+                    <textarea id="b-note" name="note" rows="3" maxlength="500"></textarea>
+                </div>
+
+                <!-- campo trappola per i bot: resta nascosto -->
+                <div class="hp" aria-hidden="true">
+                    <label for="b-sito">Sito web</label>
+                    <input id="b-sito" name="sito" type="text" tabindex="-1" autocomplete="off">
+                </div>
+
+                <label class="check">
+                    <input type="checkbox" name="privacy" required>
+                    <span>Ho letto l'<a href="{{ '/privacy/' | relative_url }}" target="_blank">informativa privacy</a> sull'uso dei miei dati per gestire l'appuntamento.</span>
+                </label>
+
+                <p class="form-error" role="alert" hidden></p>
+
+                <div class="booking-actions">
+                    <button type="submit" class="button button-primary">Conferma la prenotazione <span class="arrow" aria-hidden="true">→</span></button>
+                    <button type="button" class="button button-secondary" data-back="ora">Cambia orario</button>
+                </div>
+            </form>
+
+            <!-- Conferma -->
+            <div class="booking-step booking-done" data-step="fatto" hidden tabindex="-1">
+                {% include sprig.html %}
+                <p class="eyebrow">Prenotazione confermata</p>
+                <h2 class="serif">Filosophia ti aspetta.</h2>
+                <p class="booking-done-when serif"></p>
+                <p class="booking-done-where"></p>
+                <div class="booking-actions">
+                    <a class="button button-primary" data-gcal target="_blank" rel="noopener">Aggiungi a Google Calendar</a>
+                    <a class="button button-secondary" data-ics download="consulenza-filosophia.ics">Scarica per iPhone / Outlook</a>
+                </div>
+                <p class="booking-note">Se devi spostare o annullare, scrivi su <a href="{{ site.data.profiles.whatsapp }}" target="_blank" rel="noopener">WhatsApp</a>: l'orario si libera per qualcun altro.</p>
+            </div>
+
+            <!-- Prenotazioni non ancora attive / errore -->
+            <div class="booking-step booking-fallback" data-step="fallback" hidden>
+                <p class="eyebrow">Prenotazioni</p>
+                <h2 class="serif">Scrivi a Filosophia.</h2>
+                <p class="booking-fallback-text">La prenotazione online sarà attiva a breve. Nel frattempo scrivi due righe su WhatsApp: Filosophia ti propone il primo orario utile.</p>
+                <div class="booking-actions">
+                    <a class="button button-primary" href="{{ site.data.profiles.whatsapp }}" target="_blank" rel="noopener">Scrivi su WhatsApp <span class="arrow" aria-hidden="true">→</span></a>
+                    <a class="button button-secondary" href="tel:{{ site.data.profiles.telefono }}">Chiama {{ site.data.profiles.telefono_display }}</a>
+                </div>
+            </div>
+
+            <noscript>
+                <p class="booking-note">Per prenotare online serve JavaScript. Puoi scrivere su <a href="{{ site.data.profiles.whatsapp }}">WhatsApp</a> o chiamare il {{ site.data.profiles.telefono_display }}.</p>
+            </noscript>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section section-alt" id="contatti">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <p class="eyebrow">Contatti</p>
+            <h2 class="serif">Preferisci scrivere?</h2>
+            <p>Due righe su WhatsApp o per e-mail bastano: Filosophia ti propone il primo
+            appuntamento utile. Il primo incontro non impegna a nulla.</p>
+        </div>
+
+        <div class="info-grid reveal">
+
+            <div class="info-block">
+                <h3>Boutique</h3>
+                <p>
+                    <a href="{{ site.data.profiles.indirizzo.mappa }}" target="_blank" rel="noopener noreferrer">
+                        {{ site.data.profiles.indirizzo.via }}<br>
+                        {{ site.data.profiles.indirizzo.cap }} {{ site.data.profiles.indirizzo.citta }} ({{ site.data.profiles.indirizzo.provincia }})
+                    </a>
+                </p>
+            </div>
+
+            <div class="info-block">
+                <h3>WhatsApp</h3>
+                <p>
+                    <a href="{{ site.data.profiles.whatsapp }}" target="_blank" rel="noopener noreferrer">{{ site.data.profiles.telefono_display }}</a>
+                </p>
+                <h3 style="margin-top:1.4rem">E-mail</h3>
+                <p>
+                    <a href="mailto:{{ site.data.profiles.email }}">{{ site.data.profiles.email }}</a>
+                </p>
+            </div>
+
+            <div class="info-block">
+                <h3>Orari</h3>
+                <ul>
+                    {% for o in site.data.profiles.orari %}
+                    <li><span>{{ o.giorni }}</span><span>{{ o.ore }}</span></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="info-block">
+                <h3>Instagram</h3>
+                <p>
+                    <a href="{{ site.data.profiles.instagram }}" target="_blank" rel="noopener noreferrer">{{ site.data.profiles.instagram_handle }}</a><br>
+                    Le novità sull'apertura passano di lì.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="cta-actions reveal" style="margin-top:2.5rem;justify-content:flex-start">
+            <a class="button button-primary" href="{{ site.data.profiles.whatsapp }}" target="_blank" rel="noopener noreferrer">Scrivi su WhatsApp <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="button button-secondary" href="mailto:{{ site.data.profiles.email }}">Manda una mail</a>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section" id="mappa">
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <p class="eyebrow">Come arrivare</p>
+            <h2 class="serif">In centro, a Rovereto.</h2>
+            <p>Via Carducci è nel cuore commerciale della città, a pochi passi da Corso
+            Rosmini e dalla zona dei portici.</p>
+        </div>
+
+        <div class="map-frame reveal">
+            <iframe
+                title="Mappa: {{ site.data.profiles.indirizzo.via }}, {{ site.data.profiles.indirizzo.citta }}"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.openstreetmap.org/export/embed.html?bbox={{ site.data.profiles.indirizzo.lon | minus: 0.004 }}%2C{{ site.data.profiles.indirizzo.lat | minus: 0.002 }}%2C{{ site.data.profiles.indirizzo.lon | plus: 0.004 }}%2C{{ site.data.profiles.indirizzo.lat | plus: 0.002 }}&amp;layer=mapnik&amp;marker={{ site.data.profiles.indirizzo.lat }}%2C{{ site.data.profiles.indirizzo.lon }}"></iframe>
+        </div>
+
+        <div class="map-actions reveal">
+            <a class="button button-secondary" href="{{ site.data.profiles.indirizzo.mappa }}" target="_blank" rel="noopener noreferrer">Apri in Google Maps <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="arrive-grid reveal" style="margin-top:3.5rem">
+
+            <div class="arrive-block">
+                <h3>In auto</h3>
+                <p>Il centro di Rovereto è in gran parte a traffico limitato: conviene
+                lasciare l'auto in un parcheggio e fare gli ultimi metri a piedi.</p>
+                <p>Il più comodo è il <strong>parcheggio Centro Storico</strong> in Viale
+                dei Colli — 143 posti, aperto 24 ore su 24 con cassa automatica.</p>
+            </div>
+
+            <div class="arrive-block">
+                <h3>In treno</h3>
+                <p>La stazione di Rovereto è sulla linea del Brennero (Verona–Innsbruck),
+                servita da regionali e da alcuni treni a lunga percorrenza.</p>
+                <p>Dal piazzale della stazione al centro sono circa <strong>cinque minuti
+                a piedi</strong>.</p>
+            </div>
+
+            <div class="arrive-block">
+                <h3>In autobus</h3>
+                <p>Le linee urbane A, 4, 5, 6 e 7 servono la zona della stazione, con
+                collegamenti extraurbani da Trento, Ala e Riva del Garda.</p>
+            </div>
+
+            <div class="arrive-block">
+                <h3>Quando arrivi</h3>
+                <p>Vieni con la pelle pulita se puoi, e senza fretta: il primo incontro
+                dura circa un'ora. Se sei in ritardo manda un messaggio — lo slot resta tuo, e
+                sapendolo per tempo non si accorcia.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section section-alt" id="faq">
+    <div class="container">
+        <div class="section-heading reveal">
+            <p class="eyebrow">Domande frequenti</p>
+            <h2 class="serif">Prima di venire.</h2>
+        </div>
+
+        <div class="faq reveal">
+            {% for f in site.data.faq %}
+            <details>
+                <summary>{{ f.domanda }}</summary>
+                <p>{{ f.risposta }}</p>
+            </details>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<script src="{{ '/assets/js/prenota.js' | relative_url }}" defer></script>

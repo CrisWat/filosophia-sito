@@ -1,0 +1,334 @@
+# ---------------------------------------------------------------
+# Listino prodotti della boutique (pagina /listino/).
+# Prezzi finali al pubblico. Il costo d'acquisto NON sta qui
+# (questo file finisce online): è in _private/listino-costi.csv.
+# Come si calcolano i prezzi: vedi _private/listino-costi.csv (riservato).
+# Per cambiare un prezzo basta modificare il campo 'prezzo'.
+# ---------------------------------------------------------------
+
+linee:
+  - id: azra
+    nome: "Azra Botanical Simplicity"
+    breve: "Azra"
+    origine: "L'Aia, Paesi Bassi"
+    routine: "La routine Azra, in quattro passi"
+    testo: "Pochi ingredienti, massima efficacia. La fondatrice, la skin therapist Azra Secerbegovic, unisce la precisione della cosmesi clinica a estratti botanici scelti con rigore: formule essenziali, rispettose della barriera cutanea. Una routine completa in nove gesti."
+    gruppi:
+      - nome: "Detergere"
+        id: "azra-detergere"
+        passo: 1
+        descrizione: "Il primo gesto, mattina e sera: la doppia detersione."
+        prodotti:
+          - nome: "All Clean Balm"
+            nota: "Balsamo struccante"
+            formato: "100 ml"
+            prezzo: "42,00"
+            descrizione: "Scioglie trucco, filtri solari e impurità, poi si emulsiona in un latte che si risciacqua. Lasciato in posa diventa una delicata maschera enzimatica che leviga e illumina."
+            attivi: ["fermento di papaya", "oli di borragine, canapa e jojoba", "tanaceto blu"]
+            uso: "Su pelle asciutta come primo detergente; una volta a settimana in posa 10–15 minuti."
+          - nome: "Soothing Cleansing Gel"
+            nota: "Gel detergente"
+            formato: "100 ml"
+            prezzo: "42,00"
+            descrizione: "Gel non schiumogeno dal pH bilanciato: purifica senza alterare la barriera cutanea e lascia la pelle fresca e idratata. Adatto anche alle pelli sensibili."
+            attivi: ["aloe vera", "camomilla romana", "olio di vinacciolo"]
+            uso: "Mattina e sera, secondo passaggio della doppia detersione."
+      - nome: "Preparare e trattare"
+        id: "azra-preparare-e-trattare"
+        passo: 2
+        descrizione: "Tonico e sieri: gli attivi, nella concentrazione giusta."
+        prodotti:
+          - nome: "Deep Hydration 3-in-1"
+            nota: "Tonico, siero e bruma"
+            formato: "100 ml"
+            prezzo: "48,00"
+            descrizione: "Ripristina il pH dopo la detersione e dona un'idratazione leggera e duratura. Lenisce e uniforma il tono senza appesantire: pensato per pelli sensibili, disidratate o reattive."
+            attivi: ["niacinamide", "acido ialuronico", "pantenolo"]
+            uso: "Dopo la detersione, 3–4 spruzzi; durante il giorno come bruma."
+          - nome: "Intensive Serum"
+            nota: "Siero idratante uniformante"
+            formato: "50 ml"
+            prezzo: "58,00"
+            descrizione: "Rafforza la barriera cutanea e attenua macchie e rossori lasciati dalle imperfezioni. Texture setosa e non grassa, ottima anche come base trucco."
+            attivi: ["niacinamide", "liquirizia", "ectoina", "olio di semi di lampone"]
+            uso: "Mattina e sera, 1–2 pressioni su pelle detersa."
+          - nome: "Super Glow Serum"
+            nota: "Siero vitamina C e peptidi"
+            formato: "50 ml"
+            prezzo: "58,00"
+            descrizione: "Ravviva l'incarnato spento e ne uniforma il tono; aiuta compattezza ed elasticità e leviga le linee sottili. Particolarmente indicato per pelli secche e mature."
+            attivi: ["vitamina C stabile", "peptidi", "liquirizia"]
+            uso: "Al mattino, 2–3 volte a settimana, sempre seguito da SPF."
+      - nome: "Nutrire e proteggere"
+        id: "azra-nutrire-e-proteggere"
+        passo: 3
+        descrizione: "Il sostegno quotidiano della barriera, e lo schermo dal sole."
+        prodotti:
+          - nome: "Daily Support Oil"
+            nota: "Olio viso al bakuchiol"
+            formato: "50 ml"
+            prezzo: "58,00"
+            descrizione: "Olio leggero e non comedogenico che nutre e sostiene la barriera cutanea. Calma i rossori e nel tempo favorisce tono ed elasticità; adatto anche a pelli sensibili o a tendenza acneica."
+            attivi: ["bakuchiol", "vitamina A (retinyl palmitate)", "rosa mosqueta"]
+            uso: "2–4 gocce scaldate tra i palmi, dopo il siero."
+          - nome: "Day & Night Cream"
+            nota: "Crema viso ai peptidi"
+            formato: "50 ml"
+            prezzo: "56,00"
+            descrizione: "Crema versatile, per il giorno, la notte e anche il contorno occhi. Idrata, protegge la barriera e dona un aspetto più disteso. A rapido assorbimento, per ogni tipo di pelle."
+            attivi: ["peptidi", "ceramidi", "centella asiatica", "acido ialuronico"]
+            uso: "Mattina e sera, una pressione su pelle leggermente umida."
+          - nome: "Sunscreen SPF50+ & Daily Cream"
+            nota: "Protezione solare viso"
+            formato: "50 ml"
+            prezzo: "59,00"
+            descrizione: "Protezione ad ampio spettro UVA/UVB che fa anche da idratante quotidiano, in una texture molto leggera. Arricchita di antiossidanti contro l'invecchiamento precoce."
+            attivi: ["filtri UVA/UVB SPF50+", "tè verde", "coenzima Q10"]
+            uso: "Ogni mattina, ultimo passaggio prima del trucco."
+      - nome: "La pausa"
+        id: "azra-la-pausa"
+        passo: 4
+        descrizione: "Un trattamento in più, quando la pelle lo chiede."
+        prodotti:
+          - nome: "Face Mask"
+            nota: "Maschera idratante lenitiva"
+            formato: "100 ml"
+            prezzo: "58,00"
+            descrizione: "Maschera cremosa che lenisce, rimpolpa e aiuta a ristabilire la barriera cutanea. Si usa in posa breve, come trattamento notturno o come siero leggero; ideale dopo i trattamenti in cabina."
+            attivi: ["fermento marino", "alghe rosse", "niacinamide", "avena"]
+            uso: "1–2 volte a settimana, in posa 10–25 minuti o per tutta la notte."
+  - id: mei
+    nome: "Casa Mei"
+    breve: "Casa Mei"
+    origine: "Treviso, dal 1988"
+    testo: "Mei sta per Migliori Erbe Italiane. Fitocosmesi costruita su piante officinali raccolte nel momento giusto, fitocomplessi titolati e oli essenziali, con una filiera interamente italiana e senza petrolati, parabeni, SLS e PEG."
+    gruppi:
+      - nome: "Viso · Botanical"
+        id: "mei-viso-botanical"
+        descrizione: "Detersione ed esfoliazione con estratti vegetali."
+        prodotti:
+          - nome: "Acqua Officinale Micellare"
+            nota: "MB Botanical"
+            formato: "200 ml"
+            prezzo: "32,00"
+            descrizione: "Acqua micellare di origine vegetale che deterge e strucca viso e occhi senza risciacquo. Delicata e rinfrescante, per tutte le pelli."
+            attivi: ["erba medica", "ectoina", "cetriolo", "geranio e bergamotto"]
+          - nome: "Gel Organico Detergente Viso"
+            nota: "MB Botanical"
+            formato: "100 ml"
+            prezzo: "34,50"
+            descrizione: "Gel schiumogeno vegetale per la pulizia quotidiana: rimuove impurità e sebo in eccesso con delicatezza. Indicato per pelli miste, grasse o facilmente arrossate."
+            attivi: ["inulina", "camomilla"]
+          - nome: "Peeling Rigenerante Viso e Corpo"
+            nota: "MB Botanical"
+            formato: "250 g"
+            prezzo: "66,00"
+            descrizione: "Esfoliante purificante all'argilla verde: libera la pelle dalle cellule spente e la prepara ai trattamenti successivi, lasciandola levigata e fresca."
+            attivi: ["argilla verde italiana", "limone", "calendula"]
+      - nome: "Viso · Anti Age"
+        id: "mei-viso-anti-age"
+        descrizione: "Tono, compattezza e un viso più disteso."
+        prodotti:
+          - nome: "Crema Viso Rigenerante"
+            nota: "MB Anti Age"
+            formato: "50 ml"
+            prezzo: "117,50"
+            descrizione: "Crema dalla texture vellutata per pelli mature o che hanno perso tono. Nutre e sostiene l'elasticità, lasciando il viso morbido e più compatto. Giorno e sera."
+            attivi: ["olio di argan", "silicio da equiseto", "estratto di semi di agrumi"]
+          - nome: "Maschera Patch Viso"
+            nota: "MB Anti Age"
+            formato: "18 ml"
+            prezzo: "10,00"
+            descrizione: "Maschera in tessuto imbevuta di siero concentrato: in pochi minuti rinfresca, distende e ridona tono al viso stanco. Perfetta prima di un'occasione speciale."
+            attivi: ["amamelide", "achillea", "foglie d'olivo"]
+          - nome: "Maschera Patch Occhi"
+            nota: "MB Anti Age"
+            formato: "3 ml"
+            prezzo: "7,50"
+            descrizione: "Patch per il contorno occhi con siero concentrato: rinfrescano e decongestionano lo sguardo, attenuando l'aspetto di gonfiore e stanchezza."
+            attivi: ["amamelide", "achillea", "foglie d'olivo"]
+      - nome: "Viso · Booster AD+"
+        id: "mei-viso-booster-ad"
+        descrizione: "Concentrati da usare puri o da aggiungere alla propria crema: la routine si personalizza goccia a goccia."
+        prodotti:
+          - nome: "Booster Hydrating"
+            nota: "AD+ · idratante"
+            formato: "8,5 ml"
+            prezzo: "44,00"
+            descrizione: "Per la pelle disidratata: dona comfort e un aspetto più pieno e disteso."
+            attivi: ["muschio d'Irlanda", "fibre di carrubo"]
+          - nome: "Booster Deep Nutritive"
+            nota: "AD+ · nutriente"
+            formato: "8,5 ml"
+            prezzo: "49,00"
+            descrizione: "Per pelli secche o segnate: restituisce morbidezza ed elasticità con una texture ricca ma leggera."
+            attivi: ["olio di macadamia", "vitamina E", "peptidi del latte"]
+          - nome: "Booster Whitening Daisy"
+            nota: "AD+ · illuminante"
+            formato: "8,5 ml"
+            prezzo: "54,00"
+            descrizione: "Per il colorito spento o non uniforme: aiuta ad attenuare l'aspetto delle discromie, per un incarnato più omogeneo e luminoso."
+            attivi: ["estratto di pratolina", "muschio d'Irlanda"]
+          - nome: "Booster Velveting"
+            nota: "AD+ · lenitivo"
+            formato: "8,5 ml"
+            prezzo: "54,00"
+            descrizione: "Per pelli sensibili o arrossate: ammorbidisce e lascia una sensazione setosa, con una delicata nota di rosa."
+            attivi: ["acqua di rosa", "calendula", "malva"]
+          - nome: "Booster Vitamina C"
+            nota: "AD+ · antiage"
+            formato: "8,5 ml"
+            prezzo: "54,00"
+            descrizione: "Per pelli opache o con i primi segni del tempo: ravviva la luminosità e contribuisce a un aspetto più tonico."
+            attivi: ["vitamina C", "arancio dolce", "olio di riso"]
+      - nome: "Viso · White Purity"
+        id: "mei-viso-white-purity"
+        descrizione: "La linea al fiore di cotone, morbida e luminosa."
+        prodotti:
+          - nome: "Maschera Mousse Viso"
+            nota: "White Purity"
+            formato: "50 ml"
+            prezzo: "61,00"
+            descrizione: "Maschera dalla consistenza soffice e spumosa, da lasciare in posa 15–20 minuti. Nutre e restituisce morbidezza e freschezza, con un profumo delicato di cotone."
+            attivi: ["fiore di cotone", "olio di riso", "avocado", "vitamina E"]
+          - nome: "Olio di Giovinezza Viso"
+            nota: "White Purity"
+            formato: "15 ml"
+            prezzo: "49,00"
+            descrizione: "Olio setoso di oli vegetali pregiati per pelli secche o mature: nutre senza appesantire. Poche gocce la sera, o miscelate alla crema."
+            attivi: ["oli vegetali nobili", "olio di riso", "vitamina E"]
+      - nome: "Corpo · Mei Spa"
+        id: "mei-corpo-mei-spa"
+        descrizione: "Scrub, creme e oli per prendersi cura del corpo a casa."
+        prodotti:
+          - nome: "Superfood Scrub Viso e Corpo"
+            nota: "Superfood"
+            formato: "200 g"
+            prezzo: "51,50"
+            descrizione: "Scrub in polvere da attivare con poca acqua al momento dell'uso. Esfolia delicatamente e ravviva la luminosità, lasciando la pelle liscia e vellutata."
+            attivi: ["mango", "vinaccioli d'uva", "riso micronizzato"]
+          - nome: "Dolce Vita Body Scrub"
+            nota: "Dolce Vita"
+            formato: "250 g"
+            prezzo: "78,50"
+            descrizione: "Scrub ai cristalli di zucchero con olio essenziale di arancio dolce: leviga la pelle e la lascia morbida e profumata, con un'energia solare e mediterranea."
+            attivi: ["zucchero", "arancio dolce", "oli vegetali"]
+          - nome: "Sweet Orange Body Cream"
+            nota: "Dolce Vita"
+            formato: "220 ml"
+            prezzo: "83,00"
+            descrizione: "Crema corpo idratante dal profumo agrumato, da usare ogni giorno dopo la doccia. Ammorbidisce e lascia una scia fresca di arancio."
+            attivi: ["arancio dolce", "elicriso", "calendula"]
+          - nome: "Balance Body Oil"
+            nota: "Dolce Vita"
+            formato: "100 ml"
+            prezzo: "49,00"
+            descrizione: "Olio corpo agli agrumi mediterranei in una base vegetale elasticizzante. Nutre e tonifica: ideale dopo il bagno o per un massaggio rilassante."
+            attivi: ["agrumi mediterranei", "oli vegetali"]
+          - nome: "Persian Rose Body Oil"
+            nota: "Persian Rose"
+            formato: "100 ml"
+            prezzo: "56,50"
+            descrizione: "Olio corpo setificante alla rosa persiana in una base di oli vegetali nutrienti. Idrata e profuma la pelle, anche delicata: perfetto come dopo bagno."
+            attivi: ["rosa persiana", "oli vegetali"]
+          - nome: "VBE Thermo Sculpt"
+            nota: "Phyto Active · roll-on"
+            formato: "150 ml"
+            prezzo: "52,50"
+            descrizione: "Gel corpo riattivante con applicatore massaggiante, per gambe, glutei e addome. Dona una piacevole sensazione di calore ed è indicato per pelle poco tonica e ritenzione."
+            attivi: ["vanillil butil etere", "ginseng", "caffè verde"]
+      - nome: "Doccia e bagno"
+        id: "mei-doccia-e-bagno"
+        descrizione: "Detergenti delicati, profumati di oli essenziali."
+        prodotti:
+          - nome: "Bagnodoccia Arancio & Mandarino"
+            nota: "Mei Spa"
+            formato: "200 ml"
+            prezzo: "26,50"
+            descrizione: "Deterge con delicatezza anche le pelli sensibili e avvolge il corpo in una fragranza agrumata e allegra."
+            attivi: ["arancio", "mandarino"]
+          - nome: "Bagnodoccia Menta & Mentuccia"
+            nota: "Mei Spa"
+            formato: "200 ml"
+            prezzo: "26,50"
+            descrizione: "Tonificante e fresco: deterge con delicatezza e lascia una piacevole sensazione di freschezza."
+            attivi: ["menta piperita", "mentuccia"]
+          - nome: "Bagnodoccia Mystical Mirra"
+            nota: "Mystical Mirra"
+            formato: "250 ml"
+            prezzo: "24,50"
+            descrizione: "Fragranza calda e avvolgente alla mirra: deterge nutrendo la pelle. Per tutti i tipi di pelle."
+            attivi: ["mirra"]
+      - nome: "Mani, piedi e igiene"
+        id: "mei-mani-piedi-e-igiene"
+        descrizione: "I piccoli gesti di ogni giorno."
+        prodotti:
+          - nome: "Crema Mani Riso e Cotone"
+            nota: "Riso e Cotone"
+            formato: "25 ml"
+            prezzo: "12,00"
+            descrizione: "Crema mani vellutante in formato da borsetta: ammorbidisce e protegge, con una fragranza pulita. Si assorbe rapidamente."
+            attivi: ["aloe", "burro di karité", "centella", "fiore di cotone"]
+          - nome: "Balsamo Piedi"
+            nota: "Defaticante e deodorante"
+            formato: "100 ml"
+            prezzo: "32,50"
+            descrizione: "Per piedi stanchi e secchi: rinfresca, ammorbidisce le zone ruvide e dona sollievo a fine giornata."
+            attivi: ["aloe", "tea tree", "eucalipto"]
+          - nome: "Detergente Intimo"
+            nota: "Citrus Garden"
+            formato: "250 ml"
+            prezzo: "24,50"
+            descrizione: "Detergente delicato per l'igiene quotidiana, con una leggera nota di agrumi."
+          - nome: "Sapone Mani"
+            nota: "Citrus Garden"
+            formato: "250 ml"
+            prezzo: "20,00"
+            descrizione: "Sapone liquido dal profumo fresco di agrumi, delicato anche per l'uso frequente."
+      - nome: "Casa"
+        id: "mei-casa"
+        descrizione: "La fragranza della boutique, anche a casa."
+        prodotti:
+          - nome: "Candela Riso e Cotone"
+            nota: "Fragranze d'ambiente"
+            formato: "75 g"
+            prezzo: "16,00"
+            descrizione: "Candela profumata, morbida e pulita come biancheria appena stesa: porta in casa un'atmosfera di quiete."
+      - nome: "Cofanetti regalo"
+        id: "mei-cofanetti-regalo"
+        descrizione: "Rituali già composti, pronti da regalare."
+        prodotti:
+          - nome: "Coffret Dolce Vita Ritual"
+            nota: "Scrub, crema e olio corpo"
+            formato: "3 pezzi"
+            prezzo: "79,50"
+            descrizione: "Il rituale agli agrumi mediterranei: Dolce Vita Body Scrub 250 g, mini Sweet Orange Body Cream e mini Balance Body Oil. Leviga, nutre e profuma."
+          - nome: "Coffret Persian Rose Ritual"
+            nota: "Crema e olio corpo"
+            formato: "3 pezzi"
+            prezzo: "98,00"
+            descrizione: "Avvolto nel profumo della rosa persiana: Persian Rose Body Cream 220 ml, mini Persian Rose Body Oil e mini Peeling Botanical."
+          - nome: "Coffret Rice & Cotton Emotion"
+            nota: "Riso e Cotone"
+            formato: "cofanetto"
+            prezzo: "55,00"
+            descrizione: "La fragranza Riso e Cotone, delicata e pulita come biancheria appena lavata: un piccolo rituale di coccole per la persona e la casa."
+          - nome: "Coffret Good Night Ritual"
+            nota: "Rituale della sera"
+            formato: "cofanetto"
+            prezzo: "44,00"
+            descrizione: "Una selezione pensata per la sera, dedicata al rilassamento: un momento di calma prima di dormire."
+          - nome: "BimbiMei Set"
+            nota: "Per i più piccoli"
+            formato: "set"
+            prezzo: "103,50"
+            descrizione: "La cura quotidiana della pelle delicata dei bambini, con formule vegetali e prive di sostanze aggressive, per un bagnetto gentile."
+
+# Prodotti professionali: si usano solo in cabina, non sono in vendita.
+# Per non mostrarli sulla pagina, cancella questo blocco.
+cabina:
+  - "Mei AD+ Miracle 5 Booster Set"
+  - "AD+ spazzole e strumenti in acciaio per il massaggio del viso"
+  - "White Purity Maschera Mousse e Olio di Giovinezza, formato professionale"
+  - "Crema Mani Riso e Cotone e Balsamo Piedi, formato professionale"
+  - "Fragranza d'ambiente Dolce Vita"

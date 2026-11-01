@@ -1,0 +1,69 @@
+---
+layout: default
+permalink: /rituali/
+title: "Rituali"
+description: "Analisi della pelle, trattamenti viso, rituali e percorsi su misura. I servizi di Filosophia a Rovereto."
+---
+
+<section class="page-hero">
+    <div class="container page-hero-grid">
+        <div class="page-hero-inner reveal">
+            <p class="eyebrow">Cabina &amp; consulenza</p>
+            <h1 class="serif">Rituali</h1>
+            <p class="lede">Ogni percorso comincia dall'analisi. Quello che segue è una mappa, non un menù da scegliere alla cieca.</p>
+        </div>
+        <div class="page-hero-media reveal">
+            <img src="{{ '/assets/images/cabina.jpg' | relative_url }}?v=2" alt="La cabina dei rituali, con il lettino e la lampada ad arco"
+                 width="1448" height="1086" loading="eager" decoding="async" style="object-position: 40% 55%">
+        </div>
+    </div>
+    <div class="thread-rule" aria-hidden="true"></div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <p class="soon-note reveal">
+            <strong>Si comincia dall'analisi.</strong> Dall'apertura sono attive l'analisi
+            della pelle e la consulenza. I trattamenti in cabina e i percorsi arriveranno
+            prossimamente: le date passano da <a href="{{ site.data.profiles.instagram }}" target="_blank" rel="noopener noreferrer">{{ site.data.profiles.instagram_handle }}</a>.
+        </p>
+
+        {% for gruppo in site.data.trattamenti %}
+        <div class="menu-group reveal{% if gruppo.prossimamente %} is-soon{% endif %}">
+
+            <div class="menu-group-head">
+                <div>
+                    <p class="eyebrow">{{ gruppo.eyebrow }}</p>
+                    <h2 class="serif">{{ gruppo.gruppo }}</h2>
+                    {% if gruppo.prossimamente %}<span class="soon">Prossimamente</span>{% endif %}
+                </div>
+                <p>{{ gruppo.descrizione }}</p>
+            </div>
+
+            {% for voce in gruppo.voci %}
+            <article class="menu-item">
+                <div>
+                    <h3 class="serif">{{ voce.nome }}</h3>
+                    <p>{{ voce.testo }}</p>
+                </div>
+                <span class="duration">{{ voce.durata }}</span>
+            </article>
+            {% endfor %}
+
+        </div>
+        {% endfor %}
+
+        <div class="prose reveal" style="margin-top:3rem">
+            <p><strong>Sui prezzi.</strong> Il listino viene condiviso in fase di consulenza,
+            perché durata e numero di sedute dipendono dalla pelle e dall'obiettivo.
+            Nessun percorso viene proposto prima dell'analisi.</p>
+            <p><strong>Una nota di correttezza.</strong> Filosophia è un'attività di estetista con
+            vendita di prodotti cosmetici: i trattamenti hanno finalità estetica e non
+            sostituiscono in alcun modo una valutazione medica o dermatologica.</p>
+        </div>
+
+    </div>
+</section>
+
+{% include cta.html %}

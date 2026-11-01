@@ -1,0 +1,11 @@
+# Le due linee della boutique. Il listino completo è in _data/listino.yml
+# (campo "ancora" = id della linea nel listino, per il link diretto).
+- nome: "Azra Botanical Simplicity"
+  ruolo: "Viso · L'Aia, Paesi Bassi"
+  ancora: "azra"
+  testo: "Pochi ingredienti, massima efficacia. Nove gesti essenziali, dalla doppia detersione alla protezione solare: cosmesi botanica precisa, rispettosa della barriera cutanea."
+
+- nome: "Casa Mei"
+  ruolo: "Viso e corpo · dal 1988, Treviso"
+  ancora: "mei"
+  testo: "Migliori Erbe Italiane: fitocosmesi a filiera italiana, con oli essenziali e piante officinali. Le linee viso, la linea corpo Mei Spa, i booster AD+ e i cofanetti regalo."

@@ -1,0 +1,48 @@
+- gruppo: "Il punto di partenza"
+  eyebrow: "Analisi"
+  descrizione: "Tutto nasce da una lettura corretta della pelle. Senza analisi non c'è protocollo, solo tentativi."
+  voci:
+    - nome: "Analisi computerizzata della pelle"
+      durata: "45 min"
+      testo: "Rilevazione dello stato cutaneo con strumentazione dedicata e consulenza personalizzata. Fotografie di riferimento per misurare i risultati nel tempo."
+    - nome: "Consulenza dermocosmetica"
+      durata: "30 min"
+      testo: "Lettura del viso, revisione della routine attuale e costruzione della strategia domiciliare."
+
+- gruppo: "Viso"
+  eyebrow: "Cabina"
+  # prossimamente: true  → mostra l'etichetta "Prossimamente".
+  # Quando i trattamenti partono, cancella la riga (o metti false).
+  prossimamente: true
+  descrizione: "Protocolli costruiti sulla singola pelle: mai lo stesso trattamento per due persone diverse."
+  voci:
+    - nome: "Trattamento idratante profondo"
+      durata: "60 min"
+      testo: "Riequilibrio della barriera cutanea per pelli disidratate, reattive o stressate dal clima."
+    - nome: "Trattamento purificante"
+      durata: "60 min"
+      testo: "Per pelli impure, acne adulta e zone seborroiche. Detersione, estrazione delicata, lenitivo."
+    - nome: "Peeling e rinnovamento"
+      durata: "50 min"
+      testo: "Esfoliazione professionale progressiva su texture irregolare, discromie e segni post-acneici."
+    - nome: "Trattamento anti-age"
+      durata: "75 min"
+      testo: "Tonicità, compattezza e luminosità. Attivi ad alta concentrazione e manualità specifica."
+    - nome: "Protocollo con tecnologia"
+      durata: "60 min"
+      testo: "Trattamenti assistiti da apparecchiatura professionale per stimolare rinnovamento e permeazione degli attivi."
+
+- gruppo: "Il filo nel tempo"
+  eyebrow: "Percorsi"
+  prossimamente: true
+  descrizione: "Il risultato non è una seduta: è una sequenza. I percorsi rendono la cura una consuetudine."
+  voci:
+    - nome: "Skin Ritual · 3 mesi"
+      durata: "Percorso"
+      testo: "Cabina mensile, routine domiciliare inclusa e follow-up a 60 giorni."
+    - nome: "Skin Ritual · 6 o 12 mesi"
+      durata: "Percorso"
+      testo: "Il percorso completo: trattamenti, aggiornamento della routine, controlli fotografici e condizioni riservate sui prodotti."
+    - nome: "Skin Concierge"
+      durata: "Su invito"
+      testo: "Consulenza estesa, formulazioni e selezione su misura, gifting personalizzato. Per chi vuole la cura come servizio continuo."
