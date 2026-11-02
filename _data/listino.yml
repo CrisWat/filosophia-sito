@@ -327,8 +327,10 @@ linee:
 # Prodotti professionali: si usano solo in cabina, non sono in vendita.
 # Per non mostrarli sulla pagina, cancella questo blocco.
 cabina:
-  - "Mei AD+ Miracle 5 Booster Set"
-  - "AD+ spazzole e strumenti in acciaio per il massaggio del viso"
-  - "White Purity Maschera Mousse e Olio di Giovinezza, formato professionale"
+  - "Azra Soothing Cleansing Gel, formato professionale da 500 ml"
+  - "Mei AD+ Miracle 5 Booster Set e Bendaggio Drain Set"
+  - "AD+ spazzole e strumenti in acciaio per il massaggio di viso e corpo"
+  - "White Purity Maschera Viso e Olio Viso, formato professionale"
+  - "Oli da massaggio Balance e Drein, Gel da massaggio al Ginepro"
   - "Crema Mani Riso e Cotone e Balsamo Piedi, formato professionale"
   - "Fragranza d'ambiente Dolce Vita"
