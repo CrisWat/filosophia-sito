@@ -32,7 +32,7 @@
     var steps = {};
     root.querySelectorAll('[data-step]').forEach(function (s) { steps[s.dataset.step] = s; });
 
-    var stato = { giorni: {}, mese: null, giorno: null, ora: null, durata: 45 };
+    var stato = { giorni: {}, mese: null, giorno: null, ora: null, durata: 30 };
 
     // ------------------------------------------------------------ utilità
 
@@ -68,7 +68,7 @@
                 if (!r.ok) throw new Error(r.errore || 'errore');
                 if (r.attive === false) { fallback(); return; }
                 stato.giorni = r.giorni || {};
-                stato.durata = r.durata || 45;
+                stato.durata = r.durata || 30;
                 var date = Object.keys(stato.giorni).sort();
                 if (!date.length) {
                     fallback("Al momento l'agenda online è piena. Scrivi su WhatsApp: si trova insieme un momento.");
