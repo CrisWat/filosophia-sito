@@ -10,6 +10,20 @@
         return;
     }
 
+    // Su telefono il canvas si sposta dentro .hero-visual: i fili passano
+    // solo dietro la foto ad arco e non attraversano testo e pulsanti.
+    var casa = canvas.parentNode, dopo = canvas.nextSibling;
+    var visual = document.querySelector('.hero .hero-visual');
+    var mobile = window.matchMedia ? window.matchMedia('(max-width: 860px)') : { matches: false };
+    function colloca() {
+        if (mobile.matches && visual) {
+            if (canvas.parentNode !== visual) visual.insertBefore(canvas, visual.firstChild);
+        } else if (canvas.parentNode !== casa) {
+            casa.insertBefore(canvas, dopo);
+        }
+    }
+    colloca();
+
     var ctx = canvas.getContext('2d');
     var w = 0, h = 0, dpr = 1;
     var t = 0;
@@ -43,7 +57,9 @@
             var p = i / steps;
             var x = p * w;
             // Attenuazione ai bordi: il filo "nasce" e "svanisce".
-            var envelope = Math.sin(Math.PI * p);
+            // Su telefono il filo si vede solo ai lati della cupola:
+            // lì deve ondeggiare ancora, quindi l'attenuazione è più morbida.
+            var envelope = mobile.matches ? 0.45 + 0.55 * Math.sin(Math.PI * p) : Math.sin(Math.PI * p);
             var y = baseY
                 + Math.sin(p * Math.PI * 2 * cfg.freq + phase) * amp * envelope
                 + Math.sin(p * Math.PI * 2 * cfg.freq * 2.3 + phase * 1.7) * amp * 0.18 * envelope;
@@ -51,13 +67,20 @@
         }
 
         var grad = ctx.createLinearGradient(0, 0, w, 0);
-        grad.addColorStop(0.00, 'rgba(216, 191, 148, 0)');
-        grad.addColorStop(0.25, 'rgba(169, 129, 74, ' + cfg.alpha + ')');
-        grad.addColorStop(0.60, 'rgba(107, 42, 39, ' + cfg.alpha * 0.75 + ')');
-        grad.addColorStop(1.00, 'rgba(110, 115, 80, 0)');
+        if (mobile.matches) {
+            grad.addColorStop(0.00, 'rgba(169, 129, 74, ' + cfg.alpha * 0.3 + ')');
+            grad.addColorStop(0.18, 'rgba(169, 129, 74, ' + cfg.alpha + ')');
+            grad.addColorStop(0.82, 'rgba(107, 42, 39, ' + cfg.alpha * 0.8 + ')');
+            grad.addColorStop(1.00, 'rgba(107, 42, 39, ' + cfg.alpha * 0.3 + ')');
+        } else {
+            grad.addColorStop(0.00, 'rgba(216, 191, 148, 0)');
+            grad.addColorStop(0.25, 'rgba(169, 129, 74, ' + cfg.alpha + ')');
+            grad.addColorStop(0.60, 'rgba(107, 42, 39, ' + cfg.alpha * 0.75 + ')');
+            grad.addColorStop(1.00, 'rgba(110, 115, 80, 0)');
+        }
 
         ctx.strokeStyle = grad;
-        ctx.lineWidth = cfg.width;
+        ctx.lineWidth = mobile.matches ? cfg.width * 0.8 : cfg.width;
         ctx.lineCap = 'round';
         ctx.stroke();
     }
@@ -72,6 +95,7 @@
     }
 
     function start() {
+        colloca();
         resize();
         if (raf) cancelAnimationFrame(raf);
         raf = requestAnimationFrame(frame);
