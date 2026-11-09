@@ -1,5 +1,11 @@
+{%- assign inv = site.data.inaugurazione -%}
 <div class="topbar">
+    {%- if inv.attivo %}
+    <span data-topbar-invito>Inaugurazione {{ inv.quando }} · Trento DOC e buoni regalo · <a href="{{ site.data.profiles.whatsapp }}" data-apri-invito aria-haspopup="dialog">Ricevi l'invito</a></span>
+    <span data-topbar-normale hidden>
+    {%- endif %}
     Apertura {{ site.data.profiles.apertura | downcase }} · {{ site.data.profiles.indirizzo.via }}, {{ site.data.profiles.indirizzo.citta }} · <a href="{{ '/prenota/' | relative_url }}">Prenota la consulenza</a>
+    {%- if inv.attivo %}</span>{% endif %}
 </div>
 
 <header id="site-header" class="site-header">

@@ -1,0 +1,25 @@
+# ---------------------------------------------------------------
+# Popup "Inaugurazione" (lista inviti)
+#
+# Il popup compare su tutte le pagine (tranne /prenota/ e /privacy/)
+# 3 secondi dopo l'arrivo o a metà pagina, una volta sola: chi lo
+# chiude lo rivede dopo 3 giorni, chi si iscrive non lo rivede più. Si può
+# sempre riaprire dalla barra in alto ("Ricevi l'invito").
+#
+# Le iscrizioni arrivano nel Foglio del gestionale, scheda "Iscritti"
+# (si crea da sola alla prima iscrizione). Vedi
+# _google-script/gestionale/GUIDA.md, sezione "Lista inviti".
+#
+# attivo:   false spegne popup e barra (poi pubblica).
+# quando:   come compare nel testo. Quando la data è fissata,
+#           per esempio: "sabato 28 novembre, dalle 18"
+# fino_al:  ultimo giorno in cui il popup compare: dal giorno dopo
+#           sparisce da solo (anche la barra in alto), senza ripubblicare.
+# versione_consenso: cambiala se cambi il testo del consenso:
+#           nel Foglio resta scritto quale testo ha accettato ognuno.
+# ---------------------------------------------------------------
+
+attivo: true
+quando: "a novembre"
+fino_al: "2026-11-20"     # dal 21 novembre non compare più
+versione_consenso: "2026-11"

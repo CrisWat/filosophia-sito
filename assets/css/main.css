@@ -2095,3 +2095,105 @@ section[id] { scroll-margin-top: 5rem; }
     .ls-cabin { background: none; color: var(--ink); }
     .ls-cabin h2, .ls-cabin li, .ls-cabin p { color: var(--ink); }
 }
+
+/* ------------------------------------------------- Invito inaugurazione */
+/* Popup della lista inviti (_includes/invito.html · assets/js/invito.js) */
+
+html.invito-aperto { overflow: hidden; }
+
+.invito {
+    width: min(560px, calc(100% - 2rem));
+    max-height: calc(100dvh - 2rem);
+    margin: auto;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    background: var(--shell);
+    color: var(--ink);
+    box-shadow: 0 30px 80px -20px rgba(58, 40, 38, 0.45);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+.invito[open] { animation: invito-in 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+.invito::backdrop { background: rgba(58, 40, 38, 0.48); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
+@keyframes invito-in { from { opacity: 0; transform: translateY(18px) scale(0.98); } to { opacity: 1; transform: none; } }
+
+.invito-head {
+    position: relative;
+    background: var(--bordeaux);
+    color: var(--on-dark);
+    text-align: center;
+    padding: 2.2rem 2rem 1.9rem;
+}
+.invito-head .sprig { width: 22px; margin: 0 auto 1rem; color: var(--greige); }
+.invito-head .eyebrow { color: var(--greige); margin-bottom: 0.8rem; }
+.invito-head h2 {
+    color: var(--on-dark);
+    font-size: clamp(1.9rem, 5.4vw, 2.5rem);
+    line-height: 1.08;
+}
+.invito-head h2 em { font-style: italic; font-weight: 400; color: var(--nude); }
+.invito-head h2:focus { outline: none; }
+.invito-close {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    color: var(--on-dark);
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+.invito-close svg { width: 1.25rem; height: 1.25rem; }
+.invito-close:hover { border-color: var(--line-dark); }
+.invito-close:focus-visible { outline-color: var(--on-dark); }
+.invito-checker { height: 10px; background-size: 10px 10px; opacity: 0.9; }
+
+.invito-body { padding: 1.7rem 2rem 1.9rem; }
+.invito-lede { color: var(--ink-soft); font-size: 1rem; line-height: 1.65; margin-bottom: 0.8rem; }
+.invito-lede strong { color: var(--bordeaux); font-weight: 500; }
+.invito-lede-small { font-size: 0.92rem; margin-bottom: 1.3rem; }
+.invito .field { margin-bottom: 0.85rem; }
+.invito .field input { padding: 0.7rem 0.9rem; }
+.invito .check { font-size: 0.8rem; line-height: 1.5; }
+.invito-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.2rem; margin-top: 0.4rem; }
+.invito-actions .button { cursor: pointer; }
+.invito-later {
+    background: none;
+    border: none;
+    padding: 0.4rem 0;
+    font: inherit;
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+.invito-later:hover { color: var(--bordeaux); }
+
+.invito-done { text-align: center; padding: 0.6rem 0 0.2rem; }
+.invito-done:focus { outline: none; }
+.invito-done h3 { font-size: 2rem; color: var(--bordeaux); margin-bottom: 0.7rem; }
+.invito-done p:not(.eyebrow) { color: var(--ink-soft); max-width: 38ch; margin: 0 auto; }
+.invito-done .eyebrow { margin-bottom: 0.7rem; }
+.invito-done .invito-actions { justify-content: center; margin-top: 1.5rem; }
+
+.topbar [data-apri-invito] { cursor: pointer; }
+
+@media (max-width: 560px) {
+    .invito { width: calc(100% - 1.2rem); max-height: calc(100dvh - 1.2rem); }
+    .invito-head { padding: 1.9rem 1.4rem 1.5rem; }
+    .invito-head .sprig { width: 18px; margin-bottom: 0.7rem; }
+    .invito-body { padding: 1.3rem 1.3rem 1.5rem; }
+    .invito .field-row { grid-template-columns: 1fr; gap: 0; }
+    .invito-lede { font-size: 0.95rem; }
+    .invito-actions .button { width: 100%; justify-content: center; }
+    .invito-actions { justify-content: center; }
+}
+
+@media print { .invito { display: none; } }

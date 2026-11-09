@@ -1,0 +1,85 @@
+{%- comment -%}
+  Popup "Inaugurazione": chiede un recapito per mandare l'invito ufficiale.
+  Testi e date: _data/inaugurazione.yml · logica: assets/js/invito.js
+{%- endcomment -%}
+{%- assign inv = site.data.inaugurazione -%}
+{%- if inv.attivo -%}
+<dialog class="invito" id="invito" aria-labelledby="invito-titolo"
+    data-endpoint="{{ site.data.prenotazioni.url_script }}"
+    data-fino="{{ inv.fino_al }}"
+    data-versione="{{ inv.versione_consenso }}"
+    data-whatsapp="{{ site.data.profiles.whatsapp }}"
+    data-auto="{% if page.url contains '/prenota' or page.url contains '/privacy' %}no{% else %}si{% endif %}">
+
+    <div class="invito-head">
+        <button type="button" class="invito-close" data-chiudi aria-label="Chiudi">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
+        </button>
+        {% include sprig.html %}
+        <p class="eyebrow">Inaugurazione · {{ inv.quando }}</p>
+        <h2 id="invito-titolo" tabindex="-1" autofocus>Un calice di Trento DOC<br><em>e l'idea di Filosophia</em></h2>
+    </div>
+    <div class="checker invito-checker" aria-hidden="true"></div>
+
+    <div class="invito-body">
+
+        <form class="invito-form" data-fase="modulo" novalidate>
+            <p class="invito-lede">Inauguriamo la boutique di {{ site.data.profiles.indirizzo.via }} {{ inv.quando }}.
+                Filomena racconterà di persona da dove nasce Filosophia, sorseggiando insieme del Trento DOC e assaporando qualche stuzzichino.
+                E per chi c'è: <strong>codici sconto e buoni regalo</strong>.</p>
+            <p class="invito-lede invito-lede-small">Lasciaci un recapito: ti aggiorniamo sull'evento e ti mandiamo l'invito ufficiale.</p>
+
+            <div class="field-row">
+                <div class="field">
+                    <label for="inv-nome">Nome</label>
+                    <input id="inv-nome" name="nome" type="text" autocomplete="given-name" required minlength="2" maxlength="40">
+                </div>
+                <div class="field">
+                    <label for="inv-cognome">Cognome</label>
+                    <input id="inv-cognome" name="cognome" type="text" autocomplete="family-name" required minlength="2" maxlength="40">
+                </div>
+            </div>
+            <div class="field-row">
+                <div class="field">
+                    <label for="inv-email">Email</label>
+                    <input id="inv-email" name="email" type="email" autocomplete="email" maxlength="120">
+                </div>
+                <div class="field">
+                    <label for="inv-tel">Cellulare <small>per WhatsApp</small></label>
+                    <input id="inv-tel" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="+39 …" maxlength="25">
+                </div>
+            </div>
+
+            <!-- campo trappola per i bot: resta nascosto -->
+            <div class="hp" aria-hidden="true">
+                <label for="inv-sito">Sito web</label>
+                <input id="inv-sito" name="sito" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <label class="check">
+                <input type="checkbox" name="consenso" required>
+                <span>Voglio ricevere da Filosophia l'invito e le novità della boutique (eventi, codici sconto, buoni regalo) via email o WhatsApp.
+                    I miei dati restano a Filosophia: niente terzi, niente profilazione, e posso cancellarmi quando voglio.
+                    <a href="{{ '/privacy/#lista-inviti' | relative_url }}" target="_blank">Informativa privacy</a></span>
+            </label>
+
+            <p class="form-error" role="alert" hidden></p>
+
+            <div class="invito-actions">
+                <button type="submit" class="button button-primary">Voglio l'invito <span class="arrow" aria-hidden="true">→</span></button>
+                <button type="button" class="invito-later" data-chiudi>Non ora</button>
+            </div>
+        </form>
+
+        <div class="invito-done" data-fase="fatto" hidden tabindex="-1">
+            <p class="eyebrow">Sei in lista</p>
+            <h3>A presto<span class="invito-done-nome"></span>.</h3>
+            <p>Ti mandiamo l'invito ufficiale, con giorno e ora, <span class="invito-done-dove">al recapito che ci hai lasciato</span>.</p>
+            <div class="invito-actions">
+                <button type="button" class="button button-secondary" data-chiudi>Chiudi</button>
+            </div>
+        </div>
+
+    </div>
+</dialog>
+{%- endif -%}

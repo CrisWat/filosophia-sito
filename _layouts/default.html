@@ -31,8 +31,11 @@
 
     {% include footer.html %}
 
+    {% include invito.html %}
+
     <script src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>
     <script src="{{ '/assets/js/filo.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>
+    {% if site.data.inaugurazione.attivo %}<script src="{{ '/assets/js/invito.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>{% endif %}
 
 </body>
 
