@@ -288,7 +288,7 @@
         $('.booking-done-where').textContent = INDIRIZZO;
         var mail = $('.booking-done-mail');
         mail.textContent = r && r.mail && dati.email
-            ? 'Ti abbiamo mandato la conferma a ' + dati.email + ' (se non la vedi, guarda nella posta indesiderata).'
+            ? 'Ti ho mandato la conferma a ' + dati.email + ' (se non la vedi, guarda nella posta indesiderata).'
             : '';
         mail.hidden = !mail.textContent;
 

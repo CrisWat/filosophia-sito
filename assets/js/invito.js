@@ -140,12 +140,12 @@
                 errBox.innerHTML = '';
                 errBox.appendChild(document.createTextNode(r && r.errore === 'rete'
                     ? 'Connessione non riuscita. Riprova tra un momento, oppure '
-                    : 'Non siamo riusciti a registrarti. Riprova, oppure '));
+                    : 'Non sono riuscita a registrarti. Riprova, oppure '));
                 var a = document.createElement('a');
                 a.href = WHATSAPP + '?text=' + encodeURIComponent('Ciao! Vorrei ricevere l\'invito all\'inaugurazione di Filosophia. ' + dati.nome + ' ' + dati.cognome);
                 a.target = '_blank';
                 a.rel = 'noopener';
-                a.textContent = 'scrivici su WhatsApp';
+                a.textContent = 'scrivimi su WhatsApp';
                 errBox.appendChild(a);
                 errBox.appendChild(document.createTextNode('.'));
                 errBox.hidden = false;
