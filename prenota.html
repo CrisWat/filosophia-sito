@@ -96,8 +96,9 @@ description: "Prenota online la consulenza viso da Filosophia, in Via Carducci 1
                         <input id="b-tel" name="telefono" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+39 …">
                     </div>
                     <div class="field">
-                        <label for="b-email">Email <small>facoltativa</small></label>
-                        <input id="b-email" name="email" type="email" autocomplete="email">
+                        <label for="b-email">Email <small>consigliata</small></label>
+                        <input id="b-email" name="email" type="email" autocomplete="email" aria-describedby="b-email-nota">
+                        <small class="field-nota" id="b-email-nota">Ti mandiamo la conferma e un promemoria il giorno prima.</small>
                     </div>
                 </div>
                 <div class="field">
@@ -131,6 +132,7 @@ description: "Prenota online la consulenza viso da Filosophia, in Via Carducci 1
                 <h2 class="serif">Filosophia ti aspetta.</h2>
                 <p class="booking-done-when serif"></p>
                 <p class="booking-done-where"></p>
+                <p class="booking-done-mail" hidden></p>
                 <div class="booking-actions">
                     <a class="button button-primary" data-gcal target="_blank" rel="noopener">Aggiungi a Google Calendar</a>
                     <a class="button button-secondary" data-ics download="consulenza-filosophia.ics">Scarica per iPhone / Outlook</a>

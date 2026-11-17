@@ -252,7 +252,7 @@
             .then(function (r) {
                 btn.disabled = false;
                 btn.classList.remove('is-loading');
-                if (r.ok) return conferma(dati);
+                if (r.ok) return conferma(dati, r);
                 errore(ERRORI[r.errore] || ERRORI.errore_interno);
                 if (r.errore === 'orario_non_disponibile') {
                     var giorno = stato.giorno;
@@ -279,13 +279,18 @@
     }
     function stamp(d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); }
 
-    function conferma(dati) {
+    function conferma(dati, r) {
         var inizio = romaInUTC(dati.data, dati.ora);
         var fine = new Date(inizio.getTime() + stato.durata * 60000);
         var titolo = SERVIZIO + ' — ' + BRAND;
 
         $('.booking-done-when').textContent = maiuscola(dataLunga(dati.data)) + ', ore ' + ora(dati.ora);
         $('.booking-done-where').textContent = INDIRIZZO;
+        var mail = $('.booking-done-mail');
+        mail.textContent = r && r.mail && dati.email
+            ? 'Ti abbiamo mandato la conferma a ' + dati.email + ' (se non la vedi, guarda nella posta indesiderata).'
+            : '';
+        mail.hidden = !mail.textContent;
 
         var g = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
             '&text=' + encodeURIComponent(titolo) +
