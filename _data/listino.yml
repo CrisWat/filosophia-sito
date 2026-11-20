@@ -191,12 +191,6 @@ linee:
             prezzo: "50,00"
             descrizione: "Maschera dalla consistenza soffice e spumosa, da lasciare in posa 15–20 minuti. Nutre e restituisce morbidezza e freschezza, con un profumo delicato di cotone."
             attivi: ["fiore di cotone", "olio di riso", "avocado", "vitamina E"]
-          - nome: "Olio di Giovinezza Viso"
-            nota: "White Purity"
-            formato: "15 ml"
-            prezzo: "40,00"
-            descrizione: "Olio setoso di oli vegetali pregiati per pelli secche o mature: nutre senza appesantire. Poche gocce la sera, o miscelate alla crema."
-            attivi: ["oli vegetali nobili", "olio di riso", "vitamina E"]
       - nome: "Corpo · Mei Spa"
         id: "mei-corpo-mei-spa"
         descrizione: "Scrub, creme e oli per prendersi cura del corpo a casa."
